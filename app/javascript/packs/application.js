@@ -24,8 +24,6 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { searchDisease } from "../components/diseasesearch";
-
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
