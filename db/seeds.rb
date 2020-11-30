@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "json"
+require "rest-client"
+
+puts "creating diseases"
+response = RestClient.get("http://cid10-api.herokuapp.com/cid10")
+diseases = JSON.parse(response)
+
+diseases.each do |disease|
+  d = Disease.new(
+    name: disease["nome"],
+    cid_10: disease["codigo"],
+  )
+  d.save!
+end
+
+puts "finishing seed"
