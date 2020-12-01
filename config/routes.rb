@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: 'pages#index'
+
   scope :profiles do
     post 'index', to: "profiles#index", as: 'profiles_index'
     post ':id/follow', to: "profiles#follow", as: "follow"
