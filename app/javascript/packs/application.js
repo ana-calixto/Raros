@@ -31,6 +31,9 @@ import { loadDynamicBannerText } from '../components/banner';
 // import { initSelect2 } from '../components/init_select2';
 // import de mapbox function
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
+initAutocomplete();
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -38,5 +41,6 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   initMapbox();
   loadDynamicBannerText();
+
 
 });
