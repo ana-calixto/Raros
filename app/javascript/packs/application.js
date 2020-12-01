@@ -24,7 +24,10 @@ require("channels")
 
 // External imports
 import "bootstrap";
+<<<<<<< HEAD
 
+=======
+>>>>>>> b0a621ff495aeffbe4a3600b6c5e67a56953032c
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
