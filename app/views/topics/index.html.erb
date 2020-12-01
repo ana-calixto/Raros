@@ -1,9 +1,10 @@
 <!-- Essa página por enquanto carrega todos os tópicos com os titles funcionando como links  -->
+<div class="container">
+  <h1>View Topics</h1>
 
-<h1>View Topics</h1>
+  <% @topics.each do |t| %>
+  <p> <%= link_to t.title, topic_path(t) %> </p>
+    <% end %>
 
-<% @topics.each do |t| %>
-<p> <%= link_to t.title, topic_path(t) %> </p>
-  <% end %>
-
-  <%= link_to "Novo tópico", new_topic_path %>
+  <%= link_to "Novo tópico", new_topic_path, class: "btn btn-primary" %>
+</div>
