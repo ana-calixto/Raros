@@ -1,0 +1,27 @@
+<div class="container" style="green">
+
+  <div class="header" style = "green">
+    <%= cl_image_tag(current_user.photo.key, transformation: [
+    {width: 400, height: 400, gravity: "face", radius: "max", crop: "crop"},
+    {width: 200, crop: "scale"}
+    ]) if current_user.photo %>
+    <%= user.username %>
+    <%= link_to "Follow", follow_user_path(user.id), method: :post, remote: true %>
+  </div>
+
+  <div class="content">
+  
+    <div class="info">
+    </div>
+
+    <div class="posts">
+      <div class="post-create"></div>
+      <div class="post-list"></div>
+    </div>
+
+    <div class="follow">
+    </div>
+
+  </div>
+
+</div>

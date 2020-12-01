@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: [:follow, :unfollow]
 
-  def index
+  def show
     @users = User.where.not(id: current_user.id)
   end
 

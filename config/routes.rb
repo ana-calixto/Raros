@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     post 'index', to: "profiles#index", as: 'profiles_index'
     post ':id/follow', to: "profiles#follow", as: "follow"
     post ':id/unfollow', to: "profiles#unfollow", as: "unfollow"
+    get ':id/show', to: "profiles#show"
   end
 
   resources :chatrooms, only: :show do
