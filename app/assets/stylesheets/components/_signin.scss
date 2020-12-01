@@ -1,0 +1,55 @@
+.banner {
+  margin-top: 20px;
+  box-shadow: 1px 1px 8px black;
+  color: black;
+}
+
+img {
+  background-size: cover;
+}
+#banner-typed-text {
+  position: fixed;
+  color: white;
+  font-size: 40px;
+  margin-top: -270px;
+  text-shadow: 1px 8px 8px black;
+  margin-left: 30px;
+  font-family: $banner;
+  opacity: .7;
+  font-weight: bolder;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 80px;
+  position: fixed;
+  right: 10rem;
+  color: white;
+}
+
+.form-sigin {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.log-in {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.user-email {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.user-password {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
