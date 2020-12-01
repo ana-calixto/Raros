@@ -1,3 +1,3 @@
 class Disease < ApplicationRecord
-  has_many :users, through: :history
+  has_many :users
 end
