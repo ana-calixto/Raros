@@ -1,9 +1,4 @@
 class PostsController < ApplicationController
-  def edit
-    @post = Post.find(params[:id])
-    @post = Post.update(post_params)
-  end
-
   def new
     @topic = Topic.find(params[:topic_id])
     @post = Post.new
@@ -18,6 +13,19 @@ class PostsController < ApplicationController
       redirect_to topic_path(@topic)
     else
       render :new
+    end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to @post.topic
+    else
+      render :edit
     end
   end
 
