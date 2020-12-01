@@ -1,12 +1,13 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  belongs_to :diseases
+  belongs_to :disease, optional: true
   has_many :messages, dependent: :destroy
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   has_many :topics
   has_many :posts, through: :topic
+  has_one_attached :photo
 
   has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
   has_many :followers, through: :follower_relationships, source: :follower
@@ -14,7 +15,9 @@ class User < ApplicationRecord
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
 
-  #methods to the User model to have a simpler way of following and unfollowing users and to check if a user is following another
+  #methods to the User model to have a simpler way of following and unfollowing users
+  # and to check if a user is following another
+
   def follow(user_id)
     following_relationships.create(following_id: user_id)
   end
@@ -27,5 +30,5 @@ class User < ApplicationRecord
     relationship = Follow.find_by(follower_id: id, following_id: user_id)
     return true if relationship
   end
-
+  
 end
