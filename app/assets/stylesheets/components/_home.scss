@@ -1,0 +1,60 @@
+.container-home {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 2vw;
+}
+
+.profile-informations {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  background-color: #98c9a3;
+  padding: 10px;
+  opacity: .6;
+  box-shadow: 1px 1px 5px #588157;
+  align-content: center;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.user-photo {
+  box-shadow: 1px 1px 5px #588157;
+  display: flex;
+  width: 100%;
+}
+
+.user-name {
+  justify-content: center;
+  font-size: 2vw;
+  color: white;
+  display: flex;
+  width: 100%;
+  text-shadow: 1px 3px 5px #588157;
+}
+
+.informations {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.feed-news {
+  background-color: #98c9a3;
+  opacity: .2;
+  display: flex;
+  width: 60vw;
+  margin: 0 15px 0 15px;
+  box-shadow: 1px 1px 5px #588157;
+  justify-content: center;
+}
+
+.more {
+  background-color: #98c9a3;
+  opacity: .6;
+  width: 20vw;
+  box-shadow: 1px 1px 5px #588157;
+  justify-content: center;
+  text-align: center;
+}
