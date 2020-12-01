@@ -2,3 +2,9 @@
 
 <h1>Topic <%= @topic.title %> </h1>
 
+<%= link_to "Criar Post", new_topic_post_path(@topic) %>
+
+<% @topic.posts.each do |p|%>
+
+<p>  <%= p.content %> </p>
+<% end %>
