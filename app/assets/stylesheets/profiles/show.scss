@@ -1,0 +1,37 @@
+.header {
+    border: solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content {
+    border: solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info {
+    border: solid;
+}
+
+.display-name {
+    font-size: 40px;
+}
+
+.posts {
+    border: solid;  
+}
+
+.post-create {
+    border: solid;
+}
+
+.post-list {
+    border: solid;
+}
+
+.follow {
+    border: solid;
+}

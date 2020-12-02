@@ -1,8 +1,12 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: [:follow, :unfollow]
+  before_action :set_user, only: [:follow, :unfollow, :show]
 
   def show
-    @users = User.where.not(id: current_user.id)
+    #@followers
+    @followings= current_user.following_ids.map do |id|
+      User.find(id)
+    end
+    raise
   end
 
   def follow
