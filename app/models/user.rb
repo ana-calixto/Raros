@@ -6,8 +6,10 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   has_many :topics, dependent: :destroy
+  has_many :topic_likes
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
+  has_many :post_likes
 
   has_one_attached :photo
 
