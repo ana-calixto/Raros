@@ -101,7 +101,10 @@ ActiveRecord::Schema.define(version: 2020_12_02_161802) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+<<<<<<< HEAD
     t.boolean "status"
+=======
+>>>>>>> 639ddf94fbedb21551c59a2c4babc8ec67a6b55e
     t.date "birth_date"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
