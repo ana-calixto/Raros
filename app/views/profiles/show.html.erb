@@ -10,8 +10,11 @@
     <div class="display-name" style = "border: solid;">
       <%= @user.username %>
     </div>
-    <div class="btn-follow" style = "border: solid;">
-      <%= link_to "Follow", follow_path(@user.id), method: :post, remote: true %>
+    <div>
+        <% if user_signed_in? && current_user.id != @user.id %>
+          <%= link_to "Unfollow", unfollow_path(@user.id), method: :post, remote: true %>
+          <%= link_to "Follow", follow_path(@user.id), method: :post, remote: true %>
+        <% end %>
     </div>
   </div>
 
@@ -23,23 +26,29 @@
       <h6>Age</h6>
       <h6>Raridade</h6>
       <h6>Send a message</h6>
-      <%= link_to "Editar", edit_user_registration_path if @user=current_user %>
+      <%= link_to "Chamar no PV", chatrooms_path, method: :post  %>
+      <%= link_to "Editar", edit_user_registration_path if @user == current_user %>
     </div>
 
     <div class="posts">
       <div class="post-create">
-      <%= link_to "Criar um tópico", topics_path %>
+      <%= link_to "Criar um tópico", topics_path if @user == current_user %>
       </div>
 
       <div class="post-list">
         <h3>Atividade</h3>
-        <%#= user.topics %>
+        
+        <% @topics.each do |topic| %>
+        <%= link_to topic.title, topic_path(topic) %>
+        <% end %>
       </div>
     </div>
 
     <div class="follow">
       <h3>Followers</h3>
+      <%= @user.followers.count %>
       <h3>Following</h3>
+      <%= @user.following.count %>
     </div>
 
   </div>

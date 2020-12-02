@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get ':id/show', to: "profiles#show"
   end
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:show, :create] do
     resources :messages, only: :create
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
