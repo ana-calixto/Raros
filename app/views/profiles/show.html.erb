@@ -4,8 +4,8 @@
     <%= cl_image_tag user.photo.key, transformation: [
     {width: 400, height: 400, gravity: "face", radius: "max", crop: "crop"},
     {width: 200, crop: "scale"}
-    ] if current_user.photo %>
-    <%= @user.username %>
+    ] if user.photo %>
+    <%= user.username %>
     <%= link_to "Follow", follow_user_path(user.id), method: :post, remote: true %>
   </div>
 
@@ -23,7 +23,7 @@
     <div class="posts">
       <div class="post-create">
       <%= link_to "Criar um post", new_topic_post(post.id) %>
-        <% end %>
+        
       </div>
 
       <div class="post-list">
