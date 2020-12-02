@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :new, :create, :show] do
     resources :posts, only: [:new, :create]
   end
-  resources :posts, only: [:edit, :update]
+  resources :posts, only: [:edit, :update, :destroy]
+  resources :topics, only: [:edit, :update, :destroy]
 
 end
