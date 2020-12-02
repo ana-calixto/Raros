@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+
+  root to: 'pages#index'
+
   scope :profiles do
     post 'index', to: "profiles#index", as: 'profiles_index'
     post ':id/follow', to: "profiles#follow", as: "follow"
@@ -18,6 +20,6 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :new, :create, :show] do
     resources :posts, only: [:new, :create]
   end
-
+  resources :posts, only: [:edit, :update]
 
 end
