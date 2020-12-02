@@ -5,7 +5,10 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :photo, 
+      <%= image_tag "", width: 100, class: "hidden", id: "photo-preview" %>
+      <%= f.input :photo,
+                  input_html: { class: 'hidden', id: 'photo-input'}, 
+                  label_html: { class: 'upload-photo'},
                   label: '📷 Sua foto' %>
       <%= f.input :first_name,
                   label: 'Nome',
