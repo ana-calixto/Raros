@@ -7,9 +7,10 @@ class PostsController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @post = Post.new(post_params)
+    @post.user = current_user
     @post.topic = @topic
-
     if @post.save
+
       redirect_to topic_path(@topic)
     else
       render :new
@@ -32,6 +33,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :user_id)
   end
 end

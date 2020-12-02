@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_191634) do
+ActiveRecord::Schema.define(version: 2020_12_02_161802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,7 +73,9 @@ ActiveRecord::Schema.define(version: 2020_12_01_191634) do
     t.bigint "topic_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["topic_id"], name: "index_posts_on_topic_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -81,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_191634) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "content"
     t.index ["user_id"], name: "index_topics_on_user_id"
   end
 
@@ -98,7 +101,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_191634) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "status"
+    t.date "birth_date"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -107,5 +110,6 @@ ActiveRecord::Schema.define(version: 2020_12_01_191634) do
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "topics"
+  add_foreign_key "posts", "users"
   add_foreign_key "topics", "users"
 end
