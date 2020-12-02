@@ -2,9 +2,12 @@
 <div class="container">
   <h1>View Topics</h1>
 
+<div >
   <% @topics.each do |t| %>
-  <p> <%= link_to t.title, topic_path(t) %> </p>
+  <p>Criado por <strong> <%= t.user.first_name %></strong> </p>
+  <p> Publicado em <%= t.created_at.strftime("%d-%m-%Y") %>: <%= link_to t.title, topic_path(t) %> </p>
     <% end %>
+</div>
 
   <%= link_to "Novo tópico", new_topic_path, class: "btn btn-primary" %>
 </div>
