@@ -12,6 +12,7 @@
     "open-uri": "^0.4.3",
     "places.js": "^1.19.0",
     "popper.js": "^1.16.1",
+    "select2": "^4.0.13",
     "turbolinks": "^5.2.0",
     "typed.js": "^2.0.11"
   },

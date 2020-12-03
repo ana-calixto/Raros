@@ -21,6 +21,7 @@
       <p><i class="fas fa-birthday-cake"></i> Age: <%= @user.birth_date %></p>
       <p><i class="far fa-gem"></i> Raridade:</p>
       <p><i class="far fa-comments"></i> <%= link_to "Envie uma mensagem", chatrooms_path, method: :post  %></p>
+
       <%= link_to "Editar", edit_user_registration_path if @user == current_user %>
     </div>
 
