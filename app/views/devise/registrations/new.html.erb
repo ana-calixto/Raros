@@ -58,14 +58,15 @@
             <h3 id="name">Minha história</h3>
             <%= f.input :description,
                         label: 'Minha história',
-                        required: false,
+                        required: true,
                         autofocus: true,
                         input_html: { autocomplete: "description" },
                         placeholder: 'Minha história'%>
           </div>
           <div class="disease">
             <%= f.input :disease_id,
-                        collection: Disease.all.map { |disease| disease.name, disease.id },
+
+                        collection: Disease.all.map { |disease| [disease.name, disease.id] },
                         label: 'Minha raridade',
                         required: true,
                         autofocus: true,

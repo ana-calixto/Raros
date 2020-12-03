@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username, :address, :photo, :birth_date, :description, :disease_id])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :username, :address, :photo, :birth_date, :description, :disease_id)
+
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :username, :address, :photo, :birth_date, :description, :disease_id])
   end
 
   def after_sign_out_path_for(resources_or_scope)
