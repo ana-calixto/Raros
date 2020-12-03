@@ -63,6 +63,15 @@
                         input_html: { autocomplete: "description" },
                         placeholder: 'Minha história'%>
           </div>
+          <div class="disease">
+            <%= f.input :disease,
+                        collection: Disease.all,
+                        label: 'Minha raridade',
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "raridade", class: 'multiple-select' },
+                        placeholder: 'Minha raridade'%>
+          </div>
         </div>
 
           <div class="login-data">
