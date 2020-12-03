@@ -6,3 +6,114 @@
   background: white;
   border-radius: 2px;
 }
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-actions {
+  display: flex;
+  margin-top: 20px;
+  box-shadow: 1px 1px 5px #283618;
+  width: 100%;
+}
+
+.personal-data {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 1px 1px 5px #283618;
+  padding: 1%;
+}
+
+.description {
+  display: flex;
+  margin-top: 20px;
+  box-shadow: 1px 1px 5px #283618;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.address {
+  display: flex;
+  margin-top: 20px;
+  box-shadow: 1px 1px 5px #283618;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.birthday {
+  display: flex;
+  margin-top: 20px;
+  box-shadow: 1px 1px 5px #283618;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.username {
+  display: flex;
+  box-shadow: 1px 1px 5px #283618;
+  margin-top: 20px;
+  padding: 1%;
+  flex-direction: column;
+}
+
+.login-data {
+  display: flex;
+  box-shadow: 1px 1px 5px #283618;
+  margin-top: 20px;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.picture {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.full-name {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-right: 10px;
+}
+
+.pic {
+  display: flex;
+}
+
+.upload-pic {
+  display: flex;
+  label {
+    display: none;
+  }
+}
+
+.form-control {
+  box-shadow: 1px 1px 3px #283618;
+}
+
+.form-actions {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+  background-color: #a3b18a;
+  border-radius: 10px;
+}
+
+.join {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #a3b18a;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px #283618;
+  color: white;
+  text-shadow: 1px 1px 3px #283618;
+  h2 {
+    font-weight: bold;
+  }
+}
