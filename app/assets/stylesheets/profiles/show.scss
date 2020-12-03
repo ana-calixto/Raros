@@ -6,6 +6,8 @@
     justify-content: space-around; 
     background-color: white;
     margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 10px;
 }
 .display-name {
     font-size: 50px;
@@ -17,42 +19,55 @@
     border-radius: 5px;
     padding: 10px;
     margin: 15px;
-    
+    background-color: white;    
 }
 
 .content {
     border: solid;
     display: flex;
-    align-items: center;
-}
+    align-items: flex-start;
+    }
 
 .middle-col {
     flex-grow: 1;
+    padding: 20px;
+    margin-top: 0;
 }
 
-
-
-
-
-
-
-.posts {
-    border: solid;  
-}
-
-.post-create {
-    border: solid;
-}
-
-.post-list {
-    border: solid;
-}
 
 .follow {
     border: solid;
     text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: white;   
 }
 
-.middle-col {
-    flex-grow: 1;
+ul.items {
+    list-style-type: none;
+    padding: 10px;
+    margin: 5px;
 }
+
+
+.posts {
+    border: solid;  
+    border-radius: 5px;
+}
+
+.post-create {
+    /* border: solid;
+    border-radius: 5px;
+    background-color: white; */
+    margin-bottom: 15px; 
+    padding: 10px;
+    text-align: center;
+} 
+
+.post-list {
+    border: solid;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+}
+
