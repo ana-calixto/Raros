@@ -64,10 +64,10 @@
                         placeholder: 'Minha história'%>
           </div>
           <div class="disease">
-            <%= f.input :disease,
-                        collection: Disease.all,
+            <%= f.input :disease_id,
+                        collection: Disease.all.map { |disease| disease.name, disease.id },
                         label: 'Minha raridade',
-                        required: false,
+                        required: true,
                         autofocus: true,
                         input_html: { autocomplete: "raridade", class: 'multiple-select' },
                         placeholder: 'Minha raridade'%>
