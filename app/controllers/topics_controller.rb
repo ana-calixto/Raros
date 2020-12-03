@@ -1,4 +1,9 @@
+
+
 class TopicsController < ApplicationController
+  before_action :set_counter, only: [:show]
+  before_action :set_topics, only: [:show, :edit, :update, :destroy, :add_topic_like]
+
   def index
     @topics = Topic.all.order(created_at: :desc)
   end
@@ -8,7 +13,11 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
+    @topic_like = !@topic.topic_likes.where(user_id: current_user.id).first.nil?
+    respond_to do |format|
+          format.html
+          format.json { render json: { counter: @topic_likes_counter, liked: @topic_like } }
+        end
   end
 
   def create
@@ -22,11 +31,9 @@ class TopicsController < ApplicationController
   end
 
   def edit
-    @topic = Topic.find(params[:id])
   end
 
   def update
-    @topic = Topic.find(params[:id])
     if @topic.update(topic_params)
       redirect_to @topic, notice: 'Topic was successfully updated!'
     else
@@ -35,14 +42,12 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    @topic = Topic.find(params[:id])
     @topic.destroy
     redirect_to topics_path, notice: 'Topic was successfully erased!'
   end
 
   def add_topic_like
-    @topic = Topic.find(params[:topic_id])
-
+    # raise
     topic_like = @topic.topic_likes.where(user_id: current_user.id).first
     if topic_like.nil?
       @topic.like_count +=1
@@ -52,11 +57,24 @@ class TopicsController < ApplicationController
       topic_like.destroy
     end
     @topic.save
+    respond_to do |format|
+          format.html
+          format.json { render json: { counter: @topic_likes_counter, liked: !@topic_like.nil? } }
+        end
   end
 
   private
 
   def topic_params
     params.require(:topic).permit(:title, :content)
+  end
+
+  def set_topics
+    @topic = Topic.find(params[:id])
+  end
+
+  def set_counter
+    set_topics
+    @topic_likes_counter = @topic.like_count
   end
 end
