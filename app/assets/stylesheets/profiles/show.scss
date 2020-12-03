@@ -1,0 +1,58 @@
+.header {
+    border: solid;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between; 
+    background-color: white;
+    margin-bottom: 15px;
+}
+.display-name {
+    font-size: 50px;
+
+}
+
+.info {
+    border: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px;
+    
+}
+
+.content {
+    border: solid;
+    display: flex;
+    align-items: center;
+}
+
+.middle-col {
+    flex-grow: 1;
+}
+
+
+
+
+
+
+
+.posts {
+    border: solid;  
+}
+
+.post-create {
+    border: solid;
+}
+
+.post-list {
+    border: solid;
+}
+
+.follow {
+    border: solid;
+    text-align: center;
+}
+
+.middle-col {
+    flex-grow: 1;
+}
