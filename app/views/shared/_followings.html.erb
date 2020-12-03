@@ -1,0 +1,5 @@
+<% followings.each do |following| %>
+  <%= cl_image_tag following.photo.key, class: 'avatar' %>
+  <%= following.first_name %>
+<% end  %>
+
