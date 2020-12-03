@@ -26,6 +26,7 @@ import { initChatroomCable } from "../channels/chatroom_channel";
 
 // External imports
 import "bootstrap";
+import 'select2/dist/css/select2.css';
 
 import { loadDynamicBannerText } from '../components/banner';
 // Internal imports, e.g:
@@ -34,6 +35,7 @@ import { loadDynamicBannerText } from '../components/banner';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { previewImageOnFileSelect } from '../components/photo_preview';
+import { multipleSelect } from '../components/select2';
 
 
 initAutocomplete();
@@ -46,5 +48,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   previewImageOnFileSelect();
   loadDynamicBannerText();
-  
+  multipleSelect();
 });
