@@ -11,17 +11,17 @@ class ProfilesController < ApplicationController
 
   def follow
     current_user.follow(params[:id])
-    redirect_back
+    redirect_to profile_path(@user.id)
   end
 
   def unfollow
     current_user.unfollow(params[:id])
-    redirect_back
+    redirect_to profile_path(@user.id)
   end
 
   private
 
-  def set_user
+  def set_user  
     @user = User.find(params[:id])
   end
 end
