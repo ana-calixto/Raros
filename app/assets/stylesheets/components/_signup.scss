@@ -7,9 +7,16 @@
   border-radius: 2px;
 }
 
-.form-inputs {
+.personal-box {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 .form-actions {
@@ -21,50 +28,71 @@
 
 .personal-data {
   display: flex;
-  justify-content: space-between;
-  box-shadow: 1px 1px 5px #283618;
   padding: 1%;
+  flex-direction: column;
+  width: 60%;
+  border: 3px solid #283618;
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px #a3b18a;
+}
+
+#name {
+  color: white;
+  display: flex;
+  align-self: center;
+  margin-top: -27px;
+  background-color: #a3b18a;
+  border-radius: 10px;
+  padding: 5px;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-shadow: 1px 1px 3px #283618;
+  color: white;
+  text-shadow: 1px 1px 3px #283618;
+  font-weight: bold;
 }
 
 .description {
   display: flex;
-  margin-top: 20px;
-  box-shadow: 1px 1px 5px #283618;
   flex-direction: column;
   padding: 1%;
+  textarea.form-control {
+      height: 100px !important;
+  }
 }
 
 .address {
   display: flex;
-  margin-top: 20px;
-  box-shadow: 1px 1px 5px #283618;
   flex-direction: column;
   padding: 1%;
+  width: 100%;
 }
 
 .birthday {
   display: flex;
-  margin-top: 20px;
-  box-shadow: 1px 1px 5px #283618;
   flex-direction: column;
   padding: 1%;
+  width: 100%;
 }
 
 .username {
   display: flex;
-  box-shadow: 1px 1px 5px #283618;
-  margin-top: 20px;
   padding: 1%;
   flex-direction: column;
+  margin-top: 40px;
 }
 
 .login-data {
   display: flex;
-  box-shadow: 1px 1px 5px #283618;
-  margin-top: 20px;
   flex-direction: column;
   padding: 1%;
+  border: 3px solid #283618;
+  border-radius: 10px;
+  width: 40%;
+  margin-left: 10px;
 }
+
 
 .picture {
   display: flex;
@@ -75,7 +103,7 @@
 .full-name {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
   margin-right: 10px;
 }
 
@@ -107,8 +135,8 @@
   flex-direction: column;
   text-align: center;
   background-color: #a3b18a;
-  margin-bottom: 20px;
-  padding: 20px;
+  margin-bottom: 40px;
+  padding: 0px;
   border-radius: 10px;
   box-shadow: 1px 1px 3px #283618;
   color: white;
@@ -116,4 +144,12 @@
   h2 {
     font-weight: bold;
   }
+}
+
+label {
+  display: none;
+}
+
+.form-control {
+  height: 30px !important;
 }
