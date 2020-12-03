@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_154319) do
-
-ActiveRecord::Schema.define(version: 2020_12_02_190015) do
-
-ActiveRecord::Schema.define(version: 2020_12_03_162842) do
-
+ActiveRecord::Schema.define(version: 2020_12_03_180829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +39,9 @@ ActiveRecord::Schema.define(version: 2020_12_03_162842) do
   create_table "chatrooms", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.integer "author_id"
+    t.index ["user_id"], name: "index_chatrooms_on_user_id"
   end
 
   create_table "diseases", force: :cascade do |t|
@@ -126,14 +124,16 @@ ActiveRecord::Schema.define(version: 2020_12_03_162842) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "status"
     t.date "birth_date"
     t.text "description"
+    t.bigint "disease_id", null: false
+    t.index ["disease_id"], name: "index_users_on_disease_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chatrooms", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "post_likes", "posts"
@@ -143,4 +143,5 @@ ActiveRecord::Schema.define(version: 2020_12_03_162842) do
   add_foreign_key "topic_likes", "topics"
   add_foreign_key "topic_likes", "users"
   add_foreign_key "topics", "users"
+  add_foreign_key "users", "diseases"
 end
