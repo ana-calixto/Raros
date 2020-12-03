@@ -30,7 +30,7 @@ import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-// import de mapbox function
+// import mapbox function
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { previewImageOnFileSelect } from '../components/photo_preview';
