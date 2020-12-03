@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  belongs_to :disease, optional: true
+  belongs_to :disease
   has_many :messages, dependent: :destroy
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

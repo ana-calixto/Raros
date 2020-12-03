@@ -38,9 +38,6 @@ import { previewImageOnFileSelect } from '../components/photo_preview';
 import { multipleSelect } from '../components/select2';
 
 
-initAutocomplete();
-
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -49,4 +46,5 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   loadDynamicBannerText();
   multipleSelect();
+  initAutocomplete();
 });
