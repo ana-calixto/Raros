@@ -7,6 +7,7 @@
       <% if current_user.id == @topic.user_id %>
         <%= link_to "Editar", edit_topic_path(@topic) %> -
         <%= link_to "Apagar tópico", @topic, method: :delete, data: { confirm: 'Are you sure?' } %>
+       <p> <%= @topic.like_count %> <%= link_to '<i class="fas fa-thumbs-up"></i>'.html_safe, like_topic_path(@topic), method: :post %> </p>
       <% end %>
     </p>
   </div>
@@ -17,6 +18,9 @@
     <% @topic.posts.each do |post|%>
       <p> Postado por <strong> <%= post.user.first_name %> </strong>- <%= post.content %>
         <% if current_user.id == post.user.id %>
+
+        <p> <%= post.like_count %> <%= link_to '<i class="fas fa-thumbs-up"></i>'.html_safe, like_post_path(post), method: :post %> </p>
+
         <%= link_to "Editar", edit_post_path(post) %> - <%= link_to "Apagar", post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <% end %>
     <% end %>

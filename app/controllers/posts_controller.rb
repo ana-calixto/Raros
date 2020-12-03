@@ -38,6 +38,20 @@ class PostsController < ApplicationController
     redirect_to topic_path(@topic)
   end
 
+  def add_post_like
+    @post = Post.find(params[:post_id])
+    post_like = @post.post_likes.where(user_id: current_user.id).first
+
+    if post_like.nil?
+      @post.like_count +=1
+      PostLike.create(post: @post, user: current_user)
+    else
+      @post.like_count -=1
+      post_like.destroy
+    end
+    @post.save
+  end
+
   private
 
   def post_params
