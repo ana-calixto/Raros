@@ -9,7 +9,7 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:format])
+    @user = User.find(params[:id])
     @chatroom = Chatroom.new(user_id: @user.id, author: current_user)
     if @chatroom.save
       redirect_to chatroom_path(@chatroom)

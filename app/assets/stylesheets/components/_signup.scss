@@ -1,10 +1,9 @@
 .sign-up {
   .upload-photo {
-    border: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
     padding: 16px 24px;
     cursor: pointer;
     font-weight: 500;
-    background: white;
     border-radius: 2px;
   }
 
@@ -24,7 +23,6 @@
   .form-actions {
     display: flex;
     margin-top: 20px;
-    box-shadow: 1px 1px 5px #283618;
     width: 100%;
   }
 
@@ -35,22 +33,25 @@
     width: 60%;
     border-radius: 10px;
     margin: 0 auto;
-    box-shadow: 1px 1px 5px #a3b18a;
+    border-top: 1px solid #696969;
+    border-bottom: 1px solid #696969;
   }
 
   #name {
     display: flex;
     align-self: center;
     margin-top: -27px;
-    background-color: #f8f8f8;
+    background-color: #f5f5f5;
     border-radius: 10px;
     padding: 5px;
     padding-left: 50px;
     padding-right: 50px;
-    box-shadow: 1px 1px 3px #283618;
-    text-shadow: 1px 1px 3px #283618;
+    text-shadow: 1px 1px 3px #696969;
     font-weight: bold;
-    color: #283618;
+    color: #696969;
+    border-top: 1px solid #696969;
+    border-bottom: 1px solid #696969;
+
   }
 
   .description {
@@ -58,7 +59,8 @@
     flex-direction: column;
     padding: 1%;
     margin-top: 15px;
-    border-top: 3px solid #283618;
+    border-top: 1px solid #696969;
+    border-radius: 10px;
     textarea.form-control {
         height: 100px !important;
     }
@@ -74,7 +76,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 20px;
   }
 
   .disease {
@@ -94,7 +95,8 @@
     border-radius: 10px;
     width: 40%;
     margin-left: 10px;
-    box-shadow: 1px 1px 5px #a3b18a;
+    border-top: 1px solid #696969;
+    border-bottom: 1px solid #696969;
   }
 
 
@@ -123,14 +125,16 @@
   }
 
   .form-control {
-    box-shadow: 1px 1px 3px #283618;
+    border-top: 1px solid #696969;
+    border-bottom: 1px solid #696969;
+    border-radius: 10px;
   }
 
   .form-actions {
     display: flex;
     margin-bottom: 20px;
     flex-direction: column;
-    background-color: #a3b18a;
+    background-color: #696969;
     border-radius: 10px;
   }
 
@@ -138,13 +142,11 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #a3b18a;
+    background-color: #696969;
     margin-bottom: 40px;
     padding: 0px;
     border-radius: 10px;
-    box-shadow: 1px 1px 3px #283618;
-    color: white;
-    text-shadow: 1px 1px 3px #283618;
+    font-weight: bold;
     h2 {
       font-weight: bold;
     }
@@ -157,6 +159,4 @@
   .form-control {
     height: 30px !important;
   }
-
-
 }

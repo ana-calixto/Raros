@@ -1,14 +1,16 @@
 <div class="container">
-  <h5>Quem me segue</h5>
+  <h5>Seguidores</h5>
   <div class="followings">
     <% followers.each do |follower| %>
     <div class="following-card">
       <div class="following-pic">
-        <%= cl_image_tag follower.photo.key, height: '50px', class: 'avatar' %>
+        <%= link_to page_path(follower) do%>
+          <%= cl_image_tag follower.photo.key, height: '50px', class: 'avatar' %>
       </div>
       <div class="following-name">
         <%= follower.first_name %>
       </div>
+      <% end  %>
     </div>
     <% end %>
   </div>
