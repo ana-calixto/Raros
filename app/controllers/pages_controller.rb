@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def index
+    @age = Date.today.year - current_user.birth_date.year
     if params[:query].present?
       @users = User.where("disease ILIKE ?", "%#{params[:query]}%")
     else
