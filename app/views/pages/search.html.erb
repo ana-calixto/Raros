@@ -26,26 +26,42 @@
     </div>
    </div>
 
-  <div class="feed-news">
-    <div class="new-topic-navbar">
-      <div class="home-icone">
-        <%= link_to root_path do %>
-          <%= image_tag 'home.svg', width: '40px' %>
-        <% end  %>
-      </div>
-      <div class="post-it">
-        <%= link_to new_topic_path do %>
-          <%= image_tag 'post.png', width: '40px' %>
-        <% end  %>
-      </div>
-      <div class="chat">
-        <%= link_to new_topic_path do %>
-          <%= image_tag 'chat.png', width: '40px' %>
-        <% end  %>
-      </div>
-       <%= @users.first.first_name %>
+  <div class="middle-col">
+    <div class="feed-news">
+        <div class="new-topic-navbar">
+            <div class="home-icone">
+                <%= link_to root_path do %>
+                <%= image_tag 'home.svg', width: '40px' %>
+                <% end  %>
+            </div>
+            <div class="post-it">
+                <%= link_to new_topic_path do %>
+                <%= image_tag 'post.png', width: '40px' %>
+                <% end  %>
+            </div>
+            <div class="chat">
+                <%= link_to new_topic_path do %>
+                <%= image_tag 'chat.png', width: '40px' %>
+                <% end  %>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <div class= "search-results">
+      <ul class="items">
+        <% @users.each do |user| %>
+          <li><%= cl_image_tag user.photo.key, transformation: [
+          {width: 100, height: 100, gravity: "face", radius: "max", crop: "crop"},
+          {width: 50, crop: "scale"}
+          ] %>
+          <%= link_to user.first_name, page_path(user) %></li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>    
+
+
 
   <div class="more">
     <div class="followings-home">
