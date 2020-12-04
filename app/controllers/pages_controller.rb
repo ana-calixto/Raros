@@ -11,6 +11,7 @@ class PagesController < ApplicationController
   end
 
   def index
+    @age = Date.today.year - current_user.birth_date.year
     @users = User.all
  
     #the `geocoded` scope filters only flats with coordinates (latitude & longitude)
