@@ -9,9 +9,7 @@
       <%= current_user.first_name %> <%= current_user.last_name %>
     </div>
     <div class="informations">
-      <div class="name">
-        <%= current_user.description %>
-      </div>
+
       <div class="idade">
         <i class="fas fa-birthday-cake"></i>
         <%= @age %> anos
@@ -51,10 +49,10 @@
         <% end  %>
       </div>
     </div>
-
-      <div> <%= render "shared/topics", topics: Topic.all %></div>
+      <div>
+       <%= render "shared/topics", topics: Topic.all %>
+     </div>
   </div>
-
 
 
   <div class="more">
@@ -67,7 +65,6 @@
         <%= render 'shared/followers', followers: current_user.followers %>
       </div>
     </div>
-    <h5>Chat aqui</h5>
       <div>
        <%= render "shared/chatrooms", my_chatrooms: @my_chatrooms, chatrooms: @chatrooms %>
       </div>
