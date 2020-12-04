@@ -5,7 +5,11 @@ class PagesController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if params[:query].present?
+      @users = User.where("disease ILIKE ?", "%#{params[:query]}%")
+    else  
+      @users = User.all
+    end  
     #the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @users.geocoded.map do |user|
       {
