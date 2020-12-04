@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   def index
     if params[:query].present?
       @users = User.where("disease ILIKE ?", "%#{params[:query]}%")
-    else  
+    else
       @users = User.all
     end  
     @my_chatrooms = Chatroom.all.where(author: current_user)
