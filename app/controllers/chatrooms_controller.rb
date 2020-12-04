@@ -5,11 +5,12 @@ class ChatroomsController < ApplicationController
   end
 
   def index
-    @chatrooms = Chatroom.where(author: current_user)
+    
   end
 
   def create
-    @chatroom = Chatroom.new(user_id: params[:user_id], author: current_user)
+    @user = User.find(params[:format])
+    @chatroom = Chatroom.new(user_id: @user.id, author: current_user)
     if @chatroom.save
       redirect_to chatroom_path(@chatroom)
     else

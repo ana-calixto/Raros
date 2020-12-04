@@ -33,7 +33,7 @@
     <%#= render 'shared/followings', followings: current_user.follower %>
     <h5>Chat aqui</h5>
       <div> 
-       <%= render "shared/chatrooms", chatrooms: current_user.chatrooms %>
+       <%= render "shared/chatrooms", my_chatrooms: @my_chatrooms, chatrooms: @chatrooms %>
       </div>
   </div>
 </div>
