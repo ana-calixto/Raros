@@ -22,7 +22,7 @@ export default class extends Controller {
         if (data.liked) {
           this.buttonTarget.style.color = "#167FFB"
         } else {
-          this.buttonTarget.style.color = "#588156"
+          this.buttonTarget.style.color = "#167FFB"
         }
         this.counterTarget.innerText = data.counter;
       });
