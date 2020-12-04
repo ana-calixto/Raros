@@ -15,3 +15,61 @@
   border-bottom: 3px solid #696969;
   border-radius: 10px;
 }
+
+.search {
+  display: flex;
+}
+
+.search-space {
+  display: flex;
+  width: 80%;
+  margin-left: 0;
+  padding: 0;
+}
+
+.button-search {
+  display: flex;
+  width: 20%;
+}
+
+
+/* Style the search field */
+.form-control[type=text] {
+  padding-left: 5px;
+  font-size: 12px;
+  float: left;
+  width: 80%;
+  background: white;
+  border-radius: 5px;
+  border: 0.1rem solid #696969;
+}
+
+/* Style the submit button */
+form.form-control button {
+  float: left;
+  width: 10%;
+  padding: 1px;
+  background: #696969;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 0.1rem solid #c2eadd;
+}
+
+form.form-control {
+  border: none;
+  width: 300px;
+
+}
+
+form.form-control button:hover {
+  background: $info;
+  opacity: 0.5;
+}
+
+/* Clear floats */
+form.form-control::after {
+  content: "";
+  clear: both;
+  display: table;
+}
