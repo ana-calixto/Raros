@@ -1,0 +1,14 @@
+  <div class="topics" >
+    <div> <h1>Topics</h1></div>
+      <% topics.each do |t| %>
+        <div class="card">
+          <p>Criado por <strong> <%= t.user.first_name %></strong> </p>
+          <p> Publicado em <%= t.created_at.strftime("%d-%m-%Y") %>: <%= link_to t.title, topic_path(t) %> </p>
+           <% t.content.split(/\s*?\r\s*/).map do |paragraph| %>
+           <p> <%= paragraph.scan(/[[:alnum:]]+/).uniq.join(' ')  %>... </p>
+           <% end %>
+        </div>
+        <% end %>
+  <%= link_to "Novo tópico", new_topic_path, class: "btn btn-primary mt-2" %>
+  </div>
+

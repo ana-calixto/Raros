@@ -44,6 +44,9 @@
         <% end  %>
       </div>
     </div>
+      <div> <%= render "shared/topics", topics: Topic.all %></div>
+
+
   </div>
 
   <div class="more">
@@ -51,6 +54,7 @@
       <div class="followings-home">
         <%= render 'shared/followings', followings: current_user.following %>
       </div>
+
       <div class="followers-home">
         <%= render 'shared/followers', followers: current_user.followers %>
       </div>
