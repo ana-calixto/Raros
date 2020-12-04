@@ -3,15 +3,20 @@
     <%= image_tag 'flower-logo.png', width: '50px', height: '50px', color: 'pink' %>
   <% end %>
 
-<%= form_tag pages_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Buscar"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
+    <%= form_tag pages_path, method: :get do %>
+    <div class="search">
+      <div class="search-space">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Buscar"
+        %>
+      </div>
+      <div class="button-search">
+        <%= submit_tag "B", class: "button" %>
+      </div>
+    <% end %>
+  </div>
 
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,14 +26,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if current_user %>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
         <li class="nav-item dropdown">
-
           <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, width: '100px', height: '50px' %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Editar", edit_user_registration_path, class: "dropdown-item" %>
