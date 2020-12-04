@@ -3,19 +3,16 @@
     <%= image_tag 'flower-logo.png', width: '50px', height: '50px', color: 'pink' %>
   <% end %>
 
-<%= form_tag search_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Buscar"
-  %>
-  <%= button_tag :submit, class: "btn btn-primary" do %>
-    <i class="fas fa-search"></i>
+  <%= form_tag search_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Buscar"
+    %>
+    <%= button_tag :submit, class: "btn btn-primary" do %>
+      <i class="fas fa-search"></i>
+    <% end %>
   <% end %>
-
-
-
-<% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
