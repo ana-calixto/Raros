@@ -8,7 +8,7 @@
       ] if @user.photo.attached? %>
     </div>
 
-    <div class="display-name"">
+    <div class="display-name">
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     </div>
 
@@ -25,7 +25,7 @@
       <h4>Location: <% @user.address %></h4>
       <h4>Age: <%= @user.birth_date %> </h4>
       <h4>Raridade:  </h4>
-      <h4><%= link_to "Envie uma mensagem", chatrooms_path, method: :post  %></h4>
+      <h4><%= link_to "Envie uma mensagem", chatrooms _path, method: :post %></h4>
       <%= link_to "Editar", edit_user_registration_path if @user == current_user %>
     </div>
 
@@ -36,6 +36,7 @@
         <span>Followers</span> <%= @user.followers.count %>
 
         <span>Following</span> <%= @user.following.count %>
+
       <% if user_signed_in? && current_user.id != @user.id %>
         <% if current_user.is_following?(@user.id) %>
           <span class="btn btn-primary"> <%= link_to "Unfollow", unfollow_path(@user.id), method: :post, remote: true %></span>
@@ -51,15 +52,10 @@
 
       <div class="post-list">
         <h4>Atividade</h4>
-
         <% @topics.each do |topic| %>
         <%= link_to topic.title, topic_path(topic) %>
         <% end %>
       </div>
     </div>
-
-
-
   </div>
-
 </div>
