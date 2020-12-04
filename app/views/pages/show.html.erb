@@ -17,7 +17,7 @@
     </div>
 
   </div>
-
+  
   <div class="content">
 
     <div class="info">
@@ -25,7 +25,7 @@
       <h4>Location: <% @user.address %></h4>
       <h4>Age: <%= @user.birth_date %> </h4>
       <h4>Raridade:  </h4>
-      <h4><%= link_to "Envie uma mensagem", chatrooms_path, method: :post  %></h4>
+      <h4><%= link_to "Envie uma mensagem", chatrooms_path(@user), method: :post  %></h4>
       <%= link_to "Editar", edit_user_registration_path if @user == current_user %>
     </div>
 

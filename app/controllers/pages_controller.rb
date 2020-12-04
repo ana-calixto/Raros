@@ -10,6 +10,8 @@ class PagesController < ApplicationController
   end
 
   def index
+    @my_chatrooms = Chatroom.all.where(author: current_user)
+    @chatrooms = Chatroom.all.where(user_id: current_user)
     @users = User.all
     #the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @users.geocoded.map do |user|
