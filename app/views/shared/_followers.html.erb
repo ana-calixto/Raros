@@ -1,13 +1,13 @@
 <div class="container">
-  <h5>Quem eu sigo</h5>
+  <h5>Quem me segue</h5>
   <div class="followings">
-    <% followings.each do |following| %>
+    <% followers.each do |follower| %>
     <div class="following-card">
       <div class="following-pic">
-        <%= cl_image_tag following.photo.key, height: '50px', class: 'avatar' %>
+        <%= cl_image_tag follower.photo.key, height: '50px', class: 'avatar' %>
       </div>
       <div class="following-name">
-        <%= following.first_name %>
+        <%= follower.first_name %>
       </div>
     </div>
     <% end %>
