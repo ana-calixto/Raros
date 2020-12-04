@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :pages
-    get '/search', to: "pages#search", as: "search"
+  get '/search', to: "pages#search", as: "search"
 
 
   resources :topics, only: [:index, :new, :create, :show] do
