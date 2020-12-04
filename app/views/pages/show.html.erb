@@ -11,21 +11,16 @@
     <div class="display-name"">
       <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     </div>
-
-    <div>
-
-    </div>
-
   </div>
 
   <div class="content">
-
+  
     <div class="info">
-      <h3>Info</h3>
-      <h4>Location: <% @user.address %></h4>
-      <h4>Age: <%= @user.birth_date %> </h4>
-      <h4>Raridade:  </h4>
-      <h4><%= link_to "Envie uma mensagem", chatrooms_path, method: :post  %></h4>
+      <h4>Info</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Location: <% @user.address %></p>
+      <p><i class="fas fa-birthday-cake"></i> Age: <%= @user.birth_date %></p>
+      <p><i class="far fa-gem"></i> Raridade:</p>
+      <p><i class="far fa-comments"></i> <%= link_to "Envie uma mensagem", chatrooms_path, method: :post  %></p>
       <%= link_to "Editar", edit_user_registration_path if @user == current_user %>
     </div>
 
@@ -34,27 +29,33 @@
       <div class="follow">
 
         <span>Followers</span> <%= @user.followers.count %>
-
+        
         <span>Following</span> <%= @user.following.count %>
-      <% if user_signed_in? && current_user.id != @user.id %>
+        <% if user_signed_in? && current_user.id != @user.id %>
         <% if current_user.is_following?(@user.id) %>
-          <span class="btn btn-primary"> <%= link_to "Unfollow", unfollow_path(@user.id), method: :post, remote: true %></span>
+          <span class="btn btn-success  btn-block"> <%= link_to "Unfollow", unfollow_path(@user.id), method: :post, remote: true %></span>
         <% else %>
-          <span class="btn btn-primary"><%= link_to "Follow", follow_path(@user.id), method: :post, remote: true %></span>
+          <span class="btn btn-success btn-block"><%= link_to "Follow", follow_path(@user.id), method: :post, remote: true %></span>
         <% end %>
+        <% end %>
+      </div>
+
+      <% if @user == current_user %>
+        <span class= "post-create btn btn-outline-success btn-block"><%= link_to "Criar um tópico", topics_path %></span>
       <% end %>
-      </div>
-
-      <div class="post-create">
-      <%= link_to "Criar um tópico", topics_path if @user == current_user %>
-      </div>
-
+    
       <div class="post-list">
-        <h4>Atividade</h4>
-
-        <% @topics.each do |topic| %>
-        <%= link_to topic.title, topic_path(topic) %>
+        <h4>Últimos tópicos</h4>
+        
+        <ul class="items">
+        <% @topics.last(3).each do |topic| %>
+        <li><%= cl_image_tag @user.photo.key, transformation: [
+        {width: 100, height: 100, gravity: "face", radius: "max", crop: "crop"},
+        {width: 50, crop: "scale"}
+        ] %>
+        <%= link_to topic.title, topic_path(topic) %></li>
         <% end %>
+        </ul>
       </div>
     </div>
 
