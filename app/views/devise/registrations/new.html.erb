@@ -65,6 +65,7 @@
           </div>
           <div class="disease">
             <%= f.input :disease_id,
+
                         collection: Disease.all.map { |disease| [disease.name, disease.id] },
                         label: 'Minha raridade',
                         required: true,
