@@ -12,7 +12,6 @@
   width: 20vw;
   background-color: #98c9a3;
   padding: 10px;
-  // opacity: .6;
   box-shadow: 1px 1px 5px #588157;
   align-content: center;
   text-align: center;
@@ -41,8 +40,7 @@
 }
 
 .feed-news {
-  background-color: #98c9a3;
-  opacity: .2;
+  background-color: #d3d3d3;
   display: flex;
   width: 60vw;
   margin: 0 15px 0 15px;
@@ -52,9 +50,12 @@
 
 .more {
   background-color: #98c9a3;
-  opacity: .6;
   width: 20vw;
   box-shadow: 1px 1px 5px #588157;
   justify-content: center;
   text-align: center;
+}
+
+.new-topic {
+  font-size: 35px;
 }

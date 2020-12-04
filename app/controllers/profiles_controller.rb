@@ -2,11 +2,10 @@ class ProfilesController < ApplicationController
   before_action :set_user, only: [:follow, :unfollow, :show]
 
   def show
-    # @followers = Follower.all
-    # @followings = current_user.following_ids.map do |id|
-    #   User.find(id)
-    # end
-    @topics = Topic.where(user_id: params[:id])
+    @followers = current_user.followers
+    @followings = current_user.following_ids.map do |id|
+      User.find(id)
+    end
   end
 
   def follow
@@ -21,7 +20,7 @@ class ProfilesController < ApplicationController
 
   private
 
-  def set_user  
+  def set_user
     @user = User.find(params[:id])
   end
 end

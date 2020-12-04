@@ -5,7 +5,6 @@ class ChatroomsController < ApplicationController
   end
 
   def index
-    # @chatrooms = Chatroom.all
     @chatrooms = Chatroom.where(author: current_user)
   end
 
