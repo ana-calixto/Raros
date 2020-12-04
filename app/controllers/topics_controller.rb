@@ -3,6 +3,8 @@
 class TopicsController < ApplicationController
   before_action :set_counter, only: [:show]
   before_action :set_topics, only: [:show, :edit, :update, :destroy, :add_topic_like]
+  skip_before_action :verify_authenticity_token, :only => [:add_topic_like]
+
 
   def index
     @topics = Topic.all.order(created_at: :desc)
@@ -59,7 +61,7 @@ class TopicsController < ApplicationController
     @topic.save
     respond_to do |format|
           format.html
-          format.json { render json: { counter: @topic_likes_counter, liked: !@topic_like.nil? } }
+          format.json { render json: { counter: @topic.like_count, liked: !topic_like.nil? } }
         end
   end
 

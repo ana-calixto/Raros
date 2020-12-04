@@ -12,25 +12,13 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = [ 'counter', 'topicId', 'button' ];
 
-    connect(){
-     let id = this.topicIdTarget.innerText.trim();
-    fetch(`/topics/${id}`, { headers: { accept: "application/json" }})
-      .then(response => response.json())
-      .then((data) => {
-        if (data.liked) {
-          this.buttonTarget.style.color = "#167FFB"
-        } else {
-          this.buttonTarget.style.color = "#588156"
-        }
-        this.counterTarget.innerText = data.counter;
-      });
-  }
    refresh = () => {
     console.log('refresh')
      let id = this.topicIdTarget.innerText.trim();
-    fetch(`/add-like-topic/${id}`, { headers: { accept: "application/json" }})
+    fetch(`/add-like-topic/${id}`, { method: "POST", headers: { accept: "application/json" }})
       .then(response => response.json())
       .then((data) => {
+        // debugger
         if (data.liked) {
           this.buttonTarget.style.color = "#167FFB"
         } else {

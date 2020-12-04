@@ -12,8 +12,8 @@
            <span class="d-none" data-target="topic.topicId"> <%= @topic.id %></span>
            <p data-target="topic.counter" > <%= @topic.like_count %> </p>
 
-             <%= link_to like_topic_path(@topic), remote: true, method: :post, data: {target: "topic.button" } do  %>
-             <i class="fas fa-thumbs-up" data-action="click->topic#refresh" style="color: #167FFB;" ></i>
+             <%= link_to "#", remote: true, data: {target: "topic.button" } do  %>
+             <i class="fas fa-thumbs-up" data-action="click->topic#refresh" ></i>
              <% end %>
 
          </div>
