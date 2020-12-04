@@ -1,13 +1,1 @@
-<!-- Essa página por enquanto carrega todos os tópicos com os titles funcionando como links  -->
-<div class="container">
-  <h1>View Topics</h1>
-
-<div style= "background-color: #C1C1C1; padding: 10px; border-radius: 5px;" >
-  <% @topics.each do |t| %>
-  <p>Criado por <strong> <%= t.user.first_name %></strong> </p>
-  <p> Publicado em <%= t.created_at.strftime("%d-%m-%Y") %>: <%= link_to t.title, topic_path(t) %> </p>
-    <% end %>
-</div>
-
-  <%= link_to "Novo tópico", new_topic_path, class: "btn btn-primary mt-2" %>
-</div>
+<%= render "shared/topics", topics: @topics %>
