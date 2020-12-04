@@ -10,12 +10,12 @@ class ProfilesController < ApplicationController
 
   def follow
     current_user.follow(params[:id])
-    redirect_to profile_path(@user.id)
+    redirect_to page_path(@user.id)
   end
 
   def unfollow
     current_user.unfollow(params[:id])
-    redirect_to profile_path(@user.id)
+    redirect_to page_path(@user.id)
   end
 
   private

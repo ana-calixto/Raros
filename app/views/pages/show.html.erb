@@ -16,17 +16,12 @@
   <div class="content">
 
     <div class="info">
-
       <h4>Info</h4>
       <p><i class="fas fa-map-marker-alt"></i> Location: <% @user.address %></p>
       <p><i class="fas fa-birthday-cake"></i> Age: <%= @user.birth_date %></p>
       <p><i class="far fa-gem"></i> Raridade:</p>
       <p><i class="far fa-comments"></i> <%= link_to "Envie uma mensagem", chatrooms_path, method: :post  %></p>
-      <h3>Info</h3>
-      <h4>Location: <% @user.address %></h4>
-      <h4>Age: <%= @user.birth_date %> </h4>
-      <h4>Raridade:  </h4>
-      <h4><%= link_to "Envie uma mensagem", chatrooms_path(@user), method: :post  %></h4>
+
       <%= link_to "Editar", edit_user_registration_path if @user == current_user %>
     </div>
 
