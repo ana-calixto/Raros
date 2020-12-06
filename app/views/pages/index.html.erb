@@ -53,7 +53,8 @@
         </div>
       </div>
         <div>
-         <%= render "shared/topics", topics: Topic.all %>
+          <%= render "shared/search", users: @users %>
+          <%= render "shared/topics", topics: Topic.all %>
        </div>
     </div>
 

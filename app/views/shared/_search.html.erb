@@ -1,0 +1,35 @@
+<div class= "search-results">
+  <ul class="items">
+    <% users.each do |user| %>
+      <%= link_to page_path(user) do %>
+      <div class="card-search">
+          <div class="image-seacrh">
+            <%= cl_image_tag user.photo.key, class: 'avatar-card' %>
+          </div>
+          <div>
+            <h6><%= user.first_name %> <%= user.last_name %></h6>
+          </div>
+          <div>
+            <h6><%= user.address %> </h6>
+          </div>
+          <div>
+            <h6><%= user.disease.name %></h6>
+          </div>
+          <div class="follow-search">
+            <% if user_signed_in? && current_user.id != user.id %>
+              <% if current_user.is_following?(user.id) %>
+                <%= link_to unfollow_path(user.id), method: :post, remote: true do %>
+                  <%= image_tag 'unfollow.png', width: '40px', height: '40px' %>
+                <% end %>
+              <% else %>
+                <%= link_to unfollow_path(user.id), method: :post, remote: true do %>
+                  <%= image_tag 'follow.png', width: '40px', height: '40px' %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </ul>
+</div>

@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   def index
     @age = Date.today.year - current_user.birth_date.year if current_user
     @users = User.all
- 
+
     #the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @users.geocoded.map do |user|
       {
@@ -29,21 +29,14 @@ class PagesController < ApplicationController
     else
       @users = User.all
     end
-
-    @markers = @users.geocoded.map do |user|
-      {
-        lat: user.latitude,
-        lng: user.longitude
-      }
-    end
   end
-  
+
   private
 
   def set_user
     @user = User.find(params[:id])
   end
-  
+
   def set_chatrooms
     @my_chatrooms = Chatroom.all.where(author: current_user)
     @chatrooms = Chatroom.all.where(user_id: current_user)
