@@ -40,8 +40,8 @@ import { multipleSelect } from '../components/select2';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initChatroomCable();
   initMapbox();
+  initChatroomCable();
   previewImageOnFileSelect();
   loadDynamicBannerText();
   multipleSelect();
