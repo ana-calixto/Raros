@@ -6,3 +6,4 @@ const clearform = () => {
       }, 300);
   });
 }
+//Function that clears the form after submiting a message
