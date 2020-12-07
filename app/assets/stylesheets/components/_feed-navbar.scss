@@ -1,11 +1,12 @@
 .new-topic-navbar {
   display: flex;
-  width: 95%;
-  height: 50px;
+  width: 100%;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 10px;
-  border-radius: 10px;
-  border-bottom: 3px solid #696969;
+  margin-top: 0px;
+  box-shadow: 1px 1px 3px #283618;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
 }
 
