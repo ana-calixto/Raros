@@ -65,6 +65,14 @@ class TopicsController < ApplicationController
         end
   end
 
+  def search
+    if params[:query].present?
+      @results = PgSearch.multisearch(params[:query])
+    else
+      @results = Topic.all
+    end
+  end
+
   private
 
   def topic_params

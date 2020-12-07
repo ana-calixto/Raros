@@ -26,9 +26,9 @@ class PagesController < ApplicationController
 
   def search
     if params[:query].present?
-      @users = User.joins(:disease).where("diseases.name ILIKE ?", "%#{params[:query]}%")
+      @results = PgSearch.multisearch(params[:query])
     else
-      @users = User.all
+      @results = User.all
     end
   end
 
