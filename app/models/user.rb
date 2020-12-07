@@ -21,6 +21,9 @@ class User < ApplicationRecord
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
 
+
+  include PgSearch::Model
+  multisearchable against: [:first_name, :last_name]
   #methods to the User model to have a simpler way of following and unfollowing users
   # and to check if a user is following another
 

@@ -32,7 +32,7 @@ gem 'geocoder'
 gem 'devise'
 gem 'devise-i18n'
 gem 'faker'
-
+gem 'pg_search', '~> 2.3.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
