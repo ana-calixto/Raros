@@ -57,7 +57,7 @@
             <h3 id="name">Minha história</h3>
             <%= f.input :description,
                         label: 'Minha história',
-                        required: true,
+                        required: false,
                         autofocus: true,
                         input_html: { autocomplete: "description" },
                         placeholder: 'Minha história'%>
@@ -74,7 +74,7 @@
           </div>
         </div>
 
-          <div class="login-data">
+          <div class="login-data">  
             <h3 id="name">Meu login</h3>
             <div class="username">
               <%= f.input :username,

@@ -14,7 +14,7 @@ require "faker"
 #   d.save!
 # end
 
-#seed com sample de doenças raras
+# seed com sample de doenças raras
 puts "Creating Diseases"
 diseases = [
 {"nome" => "HPN", "cid_10" => "G91.8"},
@@ -54,4 +54,23 @@ diseases.each do |disease|
   end
  puts "Diseases created!"
 
- 
+ puts "Creating users..."
+75.times do
+  user = User.create(
+      username: Faker::Name.initials,
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      email: Faker::Internet.email,
+      password: "123456",
+      password_confirmation: "123456",
+      birth_date: Faker::Date.birthday(min_age: 18, max_age: 65),
+      address: Faker::Address.city,
+      disease_id: rand(1..25),
+    )
+  # standard avatar photo for each user:
+  user.photo.attach(io: File.open('app/assets/images/avatar.jpg'), filename: 'avatar.jpg')
+  user.save!
+  
+end
+
+puts "Users created!"
