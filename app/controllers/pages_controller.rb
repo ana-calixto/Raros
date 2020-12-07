@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def show
     @topics = Topic.where(user_id: params[:id])
+    @age = Date.today.year - current_user.birth_date.year if current_user
   end
 
   def home

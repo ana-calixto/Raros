@@ -1,19 +1,29 @@
 .avatar {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 .avatar-large {
   width: 56px;
+  height: 56px;
   border-radius: 50%;
+}
+.avatar-xlarge {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: solid #FBF1E8 4px;
 }
 .avatar-bordered {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
   box-shadow: 1px 1px 3px #283618;
 
 }
 .avatar-square {
   width: 40px;
+  height: 40px;
   border-radius: 0px;
   box-shadow: 1px 1px 3px #283618;
 

@@ -11,3 +11,12 @@
 @import "footer";
 @import "card-search";
 
+
+
+a {
+  color: #323064;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
