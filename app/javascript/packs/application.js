@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+
 import { initChatroomCable } from "../channels/chatroom_channel";
 
 
@@ -36,6 +37,9 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { multipleSelect } from '../components/select2';
+import { clearform } from '../components/chatmessage';
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -46,6 +50,9 @@ document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
   multipleSelect();
   initAutocomplete();
+  clearform();
 });
 
 import "controllers"
+
+
