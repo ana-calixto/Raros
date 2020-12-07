@@ -27,6 +27,7 @@ class User < ApplicationRecord
   #methods to the User model to have a simpler way of following and unfollowing users
   # and to check if a user is following another
 
+
   def follow(user_id)
     following_relationships.create(following_id: user_id)
   end
@@ -39,5 +40,6 @@ class User < ApplicationRecord
     relationship = Follow.find_by(follower_id: id, following_id: user_id)
     return true if relationship
   end
+
 
 end
