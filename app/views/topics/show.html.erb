@@ -1,7 +1,10 @@
 <!-- Aqui os posts serão inseridos por tópico -->
 <div class="container">
   <div class="">
-    <h1 class="topic-title"> <%= @topic.title %> </h1>
+
+    <h1>Topic <%= @topic.title %> </h1>
+      <%= cl_image_tag @topic.user.photo.key, class: "avatar" %>
+
       <p> Criado por <strong><%= @topic.user.first_name %></strong> </p>
         <p> <%= @topic.content %>
           <% if current_user.id == @topic.user_id %>
