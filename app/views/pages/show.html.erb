@@ -2,10 +2,7 @@
 
   <div class="header">
     <div class="profile-pic">
-      <%= cl_image_tag @user.photo.key, transformation: [
-      {width: 400, height: 400, gravity: "face", radius: "max", crop: "fill"},
-      {width: 200, crop: "scale"}
-      ] if @user.photo.attached? %>
+      <%= cl_image_tag @user.photo.key, class: "avatar-xlarge" if @user.photo.attached? %>
     </div>
 
     <div class="display-name">
@@ -16,13 +13,17 @@
   <div class="content">
 
     <div class="info">
-      <h4>Info</h4>
-      <p><i class="fas fa-map-marker-alt"></i> Location: <% @user.address %></p>
-      <p><i class="fas fa-birthday-cake"></i> Age: <%= @age if current_user %></p>
-      <p><i class="far fa-gem"></i> Raridade:</p>
-      <p class="btn btn-success"><i class="far fa-comments"></i> <%= link_to "Diga oi!", chatrooms_path(id: @user.id), method: :post  %></p>
-
-      <p><%= link_to "Editar", edit_user_registration_path if @user == current_user %></p>
+      <h4>Sobre mim</h4>
+      <p> <%= @user.description %></p>
+      <br>
+      <p><i class="fas fa-birthday-cake"></i>  Idade: <%= @age  %></p>
+      <p><i class="far fa-gem"></i>  Raridade: <%= @user.disease.name %></p>
+        <% if @user != current_user %>
+          <p class="btn btn-success btn-block"><i class="far fa-comments"></i> <%= link_to "Diga oi!", chatrooms_path(id: @user.id), method: :post %></p>
+        <% end %>
+        <% if @user == current_user %>
+          <p class="btn btn-success btn-block"><%= link_to "Editar", edit_user_registration_path %></p>
+        <% end %>
     </div>
 
     <div class="middle-col">
@@ -43,18 +44,15 @@
       </div>
 
       <% if @user == current_user %>
-        <span class= "post-create btn btn-success btn-block"><%= link_to "Criar um tópico", topics_path %></span>
+        <span class= "post-create btn btn-success btn-block"><%= link_to "Criar um post", topics_path %></span>
       <% end %>
 
       <div class="post-list">
-        <h4>Últimos tópicos</h4>
+        <h4>Últimos posts</h4>
 
         <ul class="items">
         <% @topics.last(3).each do |topic| %>
-        <li><%= cl_image_tag @user.photo.key, transformation: [
-        {width: 200, height: 200, gravity: "face", radius: "max", crop: "thumb"},
-        {width: 50, crop: "scale"}
-        ] %>
+        <li><%= cl_image_tag @user.photo.key, class: "avatar" %>
         <%= link_to topic.title, topic_path(topic) %></li>
         <% end %>
         </ul>

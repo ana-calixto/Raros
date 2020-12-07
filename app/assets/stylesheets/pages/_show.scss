@@ -1,57 +1,67 @@
 .header {
-  border: solid;
+  box-shadow: 1px 1px 2px #d3d1d1;
   border-radius: 5px;
   display: flex;
   align-items: flex-end;
-  justify-content: space-around;
+  justify-content: flex-start;
   background-color: white;
+  background-image: url(https://res.cloudinary.com/di1oqqblc/image/upload/v1607348091/nature_illustration_wlpfcw.jpg);
+  background-size: cover;
   margin-bottom: 15px;
   margin-top: 15px;
   padding: 10px;
 }
+.profile-pic {
+  padding: 20px;
+  
+}
 .display-name {
   font-size: 50px;
-
-}
-
-.info {
-  border: solid;
-  border-radius: 5px;
   padding: 10px;
-  margin: 15px;
-  background-color: white;
+  margin-bottom: 20px;
 }
 
 .content {
-  border: solid;
   display: flex;
-  align-items: flex-start;
 }
 
-.middle-col {
+.info {
+  box-shadow: 1px 1px 2px #d3d1d1;
+  border-radius: 5px;
+  padding: 30px;
+  margin: 15px;
+  background-color: white;
+  flex-direction: column;
   flex-grow: 1;
+}
+
+
+
+.middle-col {
+  flex-grow: 2;
   padding: 20px;
   margin-top: 0;
 }
 
 
 .follow {
-  border: solid;
+  box-shadow: 1px 1px 2px #d3d1d1;
   text-align: center;
   margin-bottom: 15px;
   padding: 10px;
   background-color: white;
+  border-radius: 5px;
 }
 
 ul.items {
   list-style-type: none;
   padding: 10px;
-  margin: 5px;
+  margin-bottom: 10px;
 }
 
 
 .posts {
-  border: solid;
+  box-shadow: 1px 1px 2px #d3d1d1;
   border-radius: 5px;
 }
 
@@ -65,7 +75,6 @@ ul.items {
 }
 
 .post-list {
-  border: solid;
   border-radius: 5px;
   background-color: white;
   padding: 10px;
