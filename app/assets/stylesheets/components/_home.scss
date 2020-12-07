@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin-top: 2vw;
+  margin-top: 5.4rem;
   color: #696969;
 }
 
@@ -18,12 +18,17 @@
   margin-left: 10px;
   box-shadow: 1px 1px 2px #d3d1d1;
   border-radius: 5px;
+  position: fixed;
+  top: calc(60px + 2vw);
+  margin-bottom: 20px;
 }
 
 .user-photo {
   display: flex;
-  width: 100%;
+
   border-radius: 5px;
+  height: 50%;
+  background-size: cover;
 }
 
 
@@ -48,12 +53,14 @@
   width: 60%;
   margin: 0 15px 0 15px;
   flex-direction: column;
+  margin-left: 22vw;
+  margin-right: 22vw;
 }
 
 
 .new-topic {
   font-size: 35px;
-  
+
 }
 
 body {
