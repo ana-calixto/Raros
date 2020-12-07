@@ -3,13 +3,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 60px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  position: relative;
-  bottom: 0;
-  margin-top: 10px;
+  position: sticky;
+  margin-top: 30px;
   box-shadow: 3px 0px 3px #853131;
+  bottom: 0;
 }
 .footer-links {
   display: flex;
@@ -25,3 +25,10 @@
 .footer-links a:hover {
   opacity: 1;
 }
+
+.footer-copyright p {
+ font-family: 'Black Han Sans', sans-serif;
+ position: relative;
+ bottom: -10px;
+}
+

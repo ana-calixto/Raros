@@ -1,8 +1,8 @@
 <div class="container">
-  <h1>New Post</h1>
+  <h1 style="color: #853131; font-size: 30px;" >Novo Comentário</h1>
 
   <%= simple_form_for ([@topic, @post]) do |p| %>
-  <%= p.input :content %>
-  <%= p.button :submit %>
+  <%= p.input :content, placeholder: "Conteúdo:" %>
+  <%= p.button :submit, class: "btn btn-primary" %>
   <% end %>
 </div>
