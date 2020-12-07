@@ -1,16 +1,16 @@
 <!-- Aqui os posts serão inseridos por tópico -->
 <div class="container">
   <div class="">
-    <h1>Topic <%= @topic.title %> </h1>
+    <h1 class="topic-title"> <%= @topic.title %> </h1>
       <p> Criado por <strong><%= @topic.user.first_name %></strong> </p>
         <p> <%= @topic.content %>
           <% if current_user.id == @topic.user_id %>
             <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_topic_path(@topic) %> -
             <%= link_to  '<i class="far fa-trash-alt"></i>'.html_safe, @topic, method: :delete, data: { confirm: 'Are you sure?' } %>
          <% end %>
-           <div id='topic_counter' data-controller="topic">
+           <div id='topic_counter' data-controller="topic" class="like-button">
            <span class="d-none" data-target="topic.topicId"> <%= @topic.id %></span>
-             <p data-target="topic.counter" > <%= @topic.like_count %> </p>
+             <p data-target="topic.counter" style="margin-right: 5px;" > <%= @topic.like_count %> </p>
 
                <%= link_to "#", remote: true, data: {target: "topic.button" } do  %>
                <i class="fas fa-thumbs-up" data-action="click->topic#refresh" ></i>
@@ -19,16 +19,16 @@
         </p>
   </div>
   <div>
-    <h4>Posts</h4>
+    <h4>Comentários</h4>
     <div>
       <% @topic.posts.each do |post|%>
 
-        <div class="card" style= "background-color: #C1C1C1; padding: 10px; border-radius: 5px;">
-            <p> Postado por <strong> <%= post.user.first_name %> </strong>- <%= post.content %>
+        <div class="card-post" style= "">
+            <p> <strong> <%= post.user.first_name %> </strong>- <%= post.content %>
               <% if current_user.id == post.user.id %>
               <div class="icons">
                 <div>
-                  <p> <%= post.like_count %> <%= link_to '<i class="fas fa-thumbs-up"></i>'.html_safe, like_post_path(post), remote: true, method: :post %> </p>
+                  <p> <%#= post.like_count %> <%#= link_to '<i class="fas fa-thumbs-up"></i>'.html_safe, like_post_path(post), remote: true, method: :post %> </p>
                 </div>
                 <div>
                   <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_post_path(post) %> - <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
