@@ -19,14 +19,14 @@ class TopicsController < ApplicationController
     respond_to do |format|
           format.html
           format.json { render json: { counter: @topic_likes_counter, liked: @topic_like } }
-        end
+      end
   end
 
   def create
     @topic = Topic.new(topic_params)
     @topic.user = current_user
     if @topic.save
-      redirect_to topics_path
+      redirect_to pages_path
     else
       render :new
     end
