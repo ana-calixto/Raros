@@ -3,7 +3,7 @@
   <div class="header">
     <div class="profile-pic">
       <%= cl_image_tag @user.photo.key, transformation: [
-      {width: 400, height: 400, gravity: "face", radius: "max", crop: "crop"},
+      {width: 400, height: 400, gravity: "face", radius: "max", crop: "fill"},
       {width: 200, crop: "scale"}
       ] if @user.photo.attached? %>
     </div>
@@ -20,9 +20,9 @@
       <p><i class="fas fa-map-marker-alt"></i> Location: <% @user.address %></p>
       <p><i class="fas fa-birthday-cake"></i> Age: <%= @age %></p>
       <p><i class="far fa-gem"></i> Raridade:</p>
-      <p><i class="far fa-comments"></i> <%= link_to "Envie uma mensagem", chatrooms_path(id: @user.id), method: :post  %></p>
+      <p class="btn btn-success"><i class="far fa-comments"></i> <%= link_to "Diga oi!", chatrooms_path(id: @user.id), method: :post  %></p>
 
-      <%= link_to "Editar", edit_user_registration_path if @user == current_user %>
+      <p><%= link_to "Editar", edit_user_registration_path if @user == current_user %></p>
     </div>
 
     <div class="middle-col">
@@ -43,7 +43,7 @@
       </div>
 
       <% if @user == current_user %>
-        <span class= "post-create btn btn-outline-success btn-block"><%= link_to "Criar um tópico", topics_path %></span>
+        <span class= "post-create btn btn-success btn-block"><%= link_to "Criar um tópico", topics_path %></span>
       <% end %>
 
       <div class="post-list">
@@ -52,7 +52,7 @@
         <ul class="items">
         <% @topics.last(3).each do |topic| %>
         <li><%= cl_image_tag @user.photo.key, transformation: [
-        {width: 100, height: 100, gravity: "face", radius: "max", crop: "crop"},
+        {width: 200, height: 200, gravity: "face", radius: "max", crop: "thumb"},
         {width: 50, crop: "scale"}
         ] %>
         <%= link_to topic.title, topic_path(topic) %></li>

@@ -7,8 +7,16 @@
 @import "signup";
 @import "aside";
 @import "feed-navbar";
-
-
 @import "topics";
-
 @import "footer";
+
+
+// New style pages
+
+a:hover {
+  color: #696969;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
