@@ -15,20 +15,20 @@
           <div>
             <h6><%= user.disease.name %></h6>
           </div>
-          <div class="follow-search">
-            <% if user_signed_in? && current_user.id != user.id %>
-              <% if current_user.is_following?(user.id) %>
-                <%= link_to unfollow_path(user.id), method: :post, remote: true do %>
-                  <%= image_tag 'unfollow.png', width: '40px', height: '40px' %>
-                <% end %>
-              <% else %>
-                <%= link_to unfollow_path(user.id), method: :post, remote: true do %>
-                  <%= image_tag 'follow.png', width: '40px', height: '40px' %>
-                <% end %>
+        <% end %>
+        <div class="follow-search">
+          <% if user_signed_in? && current_user.id != user.id %>
+            <% if current_user.is_following?(user.id) %>
+              <%= link_to unfollow_path(user.id), method: :post, remote: true do %>
+                <%= image_tag 'unfollow.png', width: '20px', height: '20px' %>
+              <% end %>
+            <% else %>
+              <%= link_to follow_path(user.id), method: :post, remote: true do %>
+                <%= image_tag 'follow.png', width: '20px', height: '20px' %>
               <% end %>
             <% end %>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </ul>
