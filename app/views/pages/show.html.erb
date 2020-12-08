@@ -43,36 +43,34 @@
         <% end %>
       </div>
 
-      <div class="container-post">
-
       <% if @user == current_user %>
-        <%= cl_image_tag @user.photo.key, class: "avatar-large pic-post" %>
-        <span class= "post-create btn-block">
-        <%= link_to "Criar um post", new_topic_path, data: {toggle: "modal", target: "#topicModalCenter"} %>
-          <div class="modal fade" id="topicModalCenter" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <%= simple_form_for Topic.new, remote: true do |f| %>
-                  <div class="modal-header">
-                    <%= f.input :title, label: false, placeholder: "Post Title" %>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <%= f.input :content %>
-                  </div>
-                  <div class="modal-footer">
-                    <%= f.submit "Post", class: "btn btn-primary btn-block" %>
-                  </div>
-                <% end %>
+        <div class="container-post">  
+          <%= cl_image_tag @user.photo.key, class: "avatar-large pic-post" %>
+          <span class= "post-create btn-block">
+          <%= link_to "Criar um post", new_topic_path, data: {toggle: "modal", target: "#topicModalCenter"} %>
+            <div class="modal fade" id="topicModalCenter" tabindex="-1" role="dialog">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <%= simple_form_for Topic.new, remote: true do |f| %>
+                    <div class="modal-header">
+                      <%= f.input :title, label: false, placeholder: "Post Title" %>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <%= f.input :content %>
+                    </div>
+                    <div class="modal-footer">
+                      <%= f.submit "Post", class: "btn btn-primary btn-block" %>
+                    </div>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
-        </span>          
+          </span>          
+        </div>
       <% end %>
-
-      </div>
 
       <div class="post-list">
         <h4>Últimos posts</h4>
