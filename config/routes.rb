@@ -26,6 +26,6 @@ Rails.application.routes.draw do
 
   post "add-like-topic/:id", to: 'topics#add_topic_like', as: "like_topic"
 
-  post "add-like-post/:post_id", to: 'posts#add_post_like', as: "like_post"
+  # post "add-like-post/:post_id", to: 'posts#add_post_like', as: "like_post"
 
 end
