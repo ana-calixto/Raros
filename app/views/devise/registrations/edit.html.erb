@@ -12,9 +12,9 @@
       <% end %>
 
       <%= f.input :photo,
-                        input_html: { class: 'hidden', id: 'photo-input'},
-                        label_html: { class: 'upload-photo'},
-                        label: '📷 Sua foto' %>
+                          input_html: { class: 'hidden', id: 'photo-input'},
+                          label_html: { class: 'upload-photo'},
+                          label: '📷 Sua foto' %>
       <%= f.input :first_name,
                           label: 'Nome',
                           required: true,
@@ -28,25 +28,31 @@
                           input_html: { autocomplete: "last_name" },
                           placeholder: 'Sobrenome'%>
       <%= f.input :address,
-                        label: 'Endereço',
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "address" },
-                        placeholder: 'Endereço'%>
+                          label: 'Endereço',
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "address" },
+                          placeholder: 'Endereço'%>
+      <%= f.input :description,
+                          label: 'Minha história',
+                          required: false,
+                          autofocus: true,
+                          input_html: { autocomplete: "description" },
+                          placeholder: 'Minha história'%>
       <%= f.input :username,
-                  required: false,
-                  input_html: { autocomplete: "username" }%>
+                          required: false,
+                          input_html: { autocomplete: "username" }%>
       <%= f.input :password,
-                  hint: "deixe em branco se não quiser alterar a senha",
-                  required: false,
-                  input_html: { autocomplete: "Nova Senha" } %>
+                          hint: "deixe em branco se não quiser alterar a senha",
+                          required: false,
+                          input_html: { autocomplete: "Nova Senha" } %>
       <%= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "Nova Senha" } %>
+                          required: false,
+                          input_html: { autocomplete: "Nova Senha" } %>
       <%= f.input :current_password,
-                  hint: "Preencha sua senha para confirmar as alterações",
-                  required: true,
-                  input_html: { autocomplete: "Senha Atual" } %>
+                          hint: "Preencha sua senha para confirmar as alterações",
+                          required: true,
+                          input_html: { autocomplete: "Senha Atual" } %>
     </div>
 
     <div class="form-actions">
