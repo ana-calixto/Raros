@@ -54,8 +54,9 @@ diseases.each do |disease|
   end
  puts "Diseases created!"
 
- locations = ["São Paulo", "Boituva", "Osasco", "Barueri", "Franco da Rocha", "Mairinque", "Salvador", "Campo Maior", "Fortaleza", "Curitiba"]
+ locations = ["São Paulo", "Boituva", "Osasco", "Barueri", "Franco da Rocha", "Mairinque", "Mongagua", "Salvador", "Campo Maior", "Fortaleza", "Curitiba"]
  puts "Creating users..."
+
 5.times do
   user = User.create(
       username: Faker::Name.initials,
@@ -65,7 +66,7 @@ diseases.each do |disease|
       password: "123456",
       password_confirmation: "123456",
       birth_date: Faker::Date.birthday(min_age: 18, max_age: 65),
-      address: Faker::Address.city,
+      # address: locations,
       disease_id: rand(1..25),
     )
   # standard avatar photo for each user:
