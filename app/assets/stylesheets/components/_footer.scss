@@ -6,10 +6,12 @@
   height: 60px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  position: sticky;
-  margin-top: 30px;
+  position: relative;
+  margin-top: 150px;
   box-shadow: 3px 0px 3px #853131;
   bottom: 0;
+  width: 100%;
+
 }
 .footer-links {
   display: flex;
@@ -32,3 +34,6 @@
  bottom: -10px;
 }
 
+.slogan p {
+margin-top: 15px;
+}
