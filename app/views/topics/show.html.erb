@@ -6,20 +6,19 @@
       <%= cl_image_tag @topic.user.photo.key, class: "avatar" %>
       <%#= raise %>
       <p> Criado por <strong><%= @topic.user.first_name %></strong> </p>
-        <p> <%= @topic.content %>
-          <% if current_user.id == @topic.user_id %>
-            <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_topic_path(@topic) %> -
-            <%= link_to  '<i class="far fa-trash-alt"></i>'.html_safe, @topic, method: :delete, data: { confirm: 'Are you sure?' } %>
-         <% end %>
-           <div id='topic_counter' data-controller="topic" class="like-button">
-           <span class="d-none" data-target="topic.topicId"> <%= @topic.id %></span>
-             <p data-target="topic.counter" style="margin-right: 5px;" > <%= @topic.like_count %> </p>
-
-               <%= link_to "#", remote: true, data: {target: "topic.button" } do  %>
-               <i class="fas fa-thumbs-up" data-action="click->topic#refresh" ></i>
-               <% end %>
-           </div>
-        </p>
+      <p> <%= @topic.content %>
+        <% if current_user.id == @topic.user_id %>
+          <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_topic_path(@topic) %> -
+          <%= link_to  '<i class="far fa-trash-alt"></i>'.html_safe, @topic, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        <div id='topic_counter' data-controller="topic" class="like-button">
+          <span class="d-none" data-target="topic.topicId"> <%= @topic.id %></span>
+          <p data-target="topic.counter" style="margin-right: 5px;" > <%= @topic.like_count %> </p>
+          <%= link_to "#", remote: true, data: {target: "topic.button" } do  %>
+             <i class="fas fa-thumbs-up" data-action="click->topic#refresh" ></i>
+          <% end %>
+        </div>
+      </p>
   </div>
   <div>
     <h4>Comentários</h4>
