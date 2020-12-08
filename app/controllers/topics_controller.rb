@@ -1,4 +1,3 @@
-require 'pry-byebug'
 class TopicsController < ApplicationController
   before_action :set_counter, only: [:show]
   before_action :set_topics, only: [:show, :edit, :update, :destroy, :add_topic_like]

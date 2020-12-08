@@ -14,7 +14,7 @@ require "faker"
 #   d.save!
 # end
 
-seed com sample de doenças raras
+#seed com sample de doenças raras
 puts "Creating Diseases"
 diseases = [
 {"nome" => "HPN", "cid_10" => "G91.8"},
