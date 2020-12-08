@@ -1,5 +1,3 @@
-
-
 class TopicsController < ApplicationController
   before_action :set_counter, only: [:show]
   before_action :set_topics, only: [:show, :edit, :update, :destroy, :add_topic_like]
@@ -7,7 +5,6 @@ class TopicsController < ApplicationController
 
 
   def index
-    @topics = Topic.all.order(created_at: :desc)
   end
 
   def new
@@ -17,8 +14,8 @@ class TopicsController < ApplicationController
   def show
     @topic_like = !@topic.topic_likes.where(user_id: current_user.id).first.nil?
     respond_to do |format|
-          format.html
-          format.json { render json: { counter: @topic_likes_counter, liked: @topic_like } }
+        format.html
+        format.json { render json: { counter: @topic_likes_counter, liked: @topic_like } }
       end
   end
 

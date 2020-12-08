@@ -59,6 +59,7 @@
             <%= image_tag 'chat.png', width: '25px' %>
           <% end  %>
         </div>
+
         <button type="button" class="fas fa-map" data-toggle="modal" data-target=".bd-example-modal-lg"></button>
          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
            <div class="modal-dialog modal-lg">
@@ -76,7 +77,8 @@
          </div>
        </div>
         <div>
-          <%= render "shared/topics", topics: Topic.all %>
+          <%= render partial: "shared/topics", locals: { topics: @topics } %>
+          <%= paginate @topics, theme: 'twitter-bootstrap-4' %>
        </div>
     </div>
     <div class="more">
@@ -87,6 +89,7 @@
 
         <div class="followers-home">
           <%= render 'shared/followers', followers: current_user.followers %>
+          <%# raise %>
         </div>
       </div>
 

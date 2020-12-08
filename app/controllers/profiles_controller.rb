@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :set_user, only: [:follow, :unfollow, :show]
 
   def show
-    @followers = current_user.followers
+    @followers = current_user.followers.page params[:page]
     @followings = current_user.following_ids.map do |id|
       User.find(id)
     end
