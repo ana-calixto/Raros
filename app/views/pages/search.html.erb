@@ -1,1 +1,65 @@
-<%= render "shared/search", results: @results %>
+<div class="container">
+  <div class="search-text">
+    <h4>Resultados da busca:</h4>
+   </div>
+      <% @results.each do |result| %>
+        <% a = result.searchable %>
+        <%= link_to page_path(a) do %>
+              <% if result[:searchable_type] == 'User' %>
+                <div class="search-user-card">
+                  <div class="image-search">
+                    <%= cl_image_tag a.photo.key, class: 'avatar-large' %>
+                  </div>
+                  <div class="search-first_name">
+                    <h6><%= a.first_name %> <%= a.last_name %></h6>
+                  </div>
+                  <div class="search-last_name">
+                    <h6><%= a.address %> </h6>
+                  </div>
+                  <div class="search-adress">
+                    <h6><%= a.disease.name %></h6>
+                  </div>
+                  <div class="follow-search">
+                    <% if user_signed_in? && current_user.id != a.id %>
+                      <% if current_user.is_following?(a.id) %>
+                        <%= link_to unfollow_path(a.id), method: :post, remote: true do %>
+                          <%= image_tag 'unfollow.png', width: '20px', height: '20px' %>
+                        <% end %>
+                      <% else %>
+                        <%= link_to follow_path(a.id), method: :post, remote: true do %>
+                          <%= image_tag 'follow.png', width: '20px', height: '20px' %>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+            <% elsif result[:searchable_type] == 'Topic'%>
+              <div class="search-post">
+                <div class="search-post-title">
+                  <strong><%= a.title %></strong>
+                </div>
+                <div class="search-like">
+                  <p> <%= a.content %>
+                    <% if current_user.id == a.user_id %>
+                      <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_topic_path(a) %> -
+                      <%= link_to  '<i class="far fa-trash-alt"></i>'.html_safe, a, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
+                    <div id='topic_counter' data-controller="topic" class="like-button">
+                      <span class="d-none" data-target="topic.topicId"> <%= a.id %></span>
+                      <p data-target="topic.counter" style="margin-right: 5px;" > <%= a.like_count %> </p>
+                      <%= link_to "#", remote: true, data: {target: "topic.button" } do  %>
+                         <i class="fas fa-thumbs-up" data-action="click->topic#refresh" ></i>
+                      <% end %>
+                    </div>
+                  </p>
+                </div>
+              </div>
+            <% else %>
+              <div class="search-user-card">
+                <%= a.name %>
+                <%= a.cid_10 %>
+              </div>
+          <% end %>
+      <% end %>
+      <% end %>
+</div>
