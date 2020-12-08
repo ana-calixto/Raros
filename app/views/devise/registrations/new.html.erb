@@ -1,5 +1,4 @@
-<div class="container mt-3 sign-up">
-
+<div class="container sign-up">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
     <div class="personal-box">
@@ -74,7 +73,7 @@
           </div>
         </div>
 
-          <div class="login-data">  
+          <div class="login-data">
             <h3 id="name">Meu login</h3>
             <div class="username">
               <%= f.input :username,

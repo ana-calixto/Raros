@@ -43,7 +43,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic.destroy
-    redirect_to topics_path, notice: 'Topic was successfully erased!'
+    redirect_to pages_path, notice: 'Topic was successfully erased!'
   end
 
   def add_topic_like

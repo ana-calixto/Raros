@@ -1,27 +1,19 @@
-.container-search {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-top: 70px;
-}
-
-.search-results {
-  display: flex;
-  margin-top: 70px;
-  border-radius: 5px;
-}
-
 .search-user-card {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
+  box-shadow: 1px 1px 5px #dedede;
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 10px;
+  padding: 10px;
+  align-items: center;
 }
 
 .card-search {
   display: flex;
-  width: 80vw;
+  width: 100%;
   padding: 10px;
   border-radius: 5px;
   background-color: white;
@@ -56,7 +48,7 @@
   display: flex;
   flex-direction: column;
   box-shadow: 1px 1px 5px #dedede;
-  width: 70vw;
+  width: 100%;
   border-radius: 5px;
   background-color: white;
   margin-top: 10px;
@@ -66,4 +58,27 @@
 .search-text {
   display: flex;
   align-self: flex-start;
+}
+
+.search-disease-card {
+  display: flex;
+  border-radius: 5px;
+  background-color: white;
+  justify-content: space-between;
+  box-shadow: 1px 1px 5px #dedede;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.search-content {
+  display: flex;
+}
+
+.search-menu-topic {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  justify-content: space-around;
+  align-self: flex-start;
+  margin-top: 10px;
 }
