@@ -68,7 +68,7 @@ diseases.each do |disease|
  "São José dos Pinhais"]
  puts "Creating users..."
 
-5.times do
+30.times do
   user = User.create(
       username: Faker::Name.initials,
       first_name: Faker::Name.first_name,
