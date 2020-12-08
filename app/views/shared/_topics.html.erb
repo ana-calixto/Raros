@@ -2,12 +2,14 @@
   <div><h1>Atividade</h1></div>
     <% topics.each do |t| %>
       <div class="card">
+    <%= link_to topic_path(t) do %>
         <div style="display: flex;">
           <%= cl_image_tag t.user.photo.key, class: "avatar" %>
           <h5 style="margin-left: 10px; "><strong> <%= t.user.first_name %></strong> </h5>
         </div>
         <p> <%= time_ago_in_words t.created_at %>: <strong> <%= link_to t.title, topic_path(t) %> </strong></p>
         <p> <%= t.content.truncate(200, separator: ' ') %> </p>
+      <% end %>
       </div>
     <% end %>
 </div>
