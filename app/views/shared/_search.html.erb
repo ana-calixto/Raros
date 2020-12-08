@@ -2,7 +2,7 @@
   <ul class="items">
     <% results.each do |result| %>
       <% a = result.searchable %>
-      <%= link_to page_path(result) do %>
+      <%= link_to page_path(a) do %>
         <div class="card-search">
           <% if result[:searchable_type] == 'User' %>
             <div class="image-search">

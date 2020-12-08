@@ -77,7 +77,8 @@
          </div>
        </div>
         <div>
-          <%= render "shared/topics", topics: Topic.all %>
+          <%= render partial: "shared/topics", locals: { topics: @topics } %>
+          <%= paginate @topics, theme: 'twitter-bootstrap-4' %>
        </div>
     </div>
     <div class="more">
@@ -88,6 +89,7 @@
 
         <div class="followers-home">
           <%= render 'shared/followers', followers: current_user.followers %>
+          <%# raise %>
         </div>
       </div>
 
