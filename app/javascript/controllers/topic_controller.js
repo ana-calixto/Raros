@@ -15,6 +15,7 @@ export default class extends Controller {
    refresh = () => {
     console.log('refresh')
      let id = this.topicIdTarget.innerText.trim();
+    console.log(id)
     fetch(`/add-like-topic/${id}`, { method: "POST", headers: { accept: "application/json" }})
       .then(response => response.json())
       .then((data) => {

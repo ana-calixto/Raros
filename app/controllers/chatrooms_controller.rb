@@ -10,6 +10,8 @@ class ChatroomsController < ApplicationController
 
   def create
     @user = User.find(params[:id])
+    existing_chat = find_chat 
+    return redirect_to chatroom_path(existing_chat) if existing_chat.present? 
     @chatroom = Chatroom.new(user_id: @user.id, author: current_user)
     if @chatroom.save
       redirect_to chatroom_path(@chatroom)
@@ -22,5 +24,9 @@ class ChatroomsController < ApplicationController
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
+  end
+
+  def find_chat
+    Chatroom.find_by(user_id: [@user.id, current_user.id], author: [current_user, @user])
   end
 end
