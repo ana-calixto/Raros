@@ -12,11 +12,14 @@
 @import "card-search";
 
 
+a:hover {
+    text-decoration: none;
+}
 
 a {
-  color: #323064;
-
-  &:hover {
-    text-decoration: none;
-  }
+  color: rgb(71, 68, 68);
+    &:hover {
+      text-decoration: none;
+      color: rgb(71, 68, 68);
+    }
 }
