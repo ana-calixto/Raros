@@ -133,7 +133,6 @@ ActiveRecord::Schema.define(version: 2020_12_07_164031) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
-    t.boolean "status"
     t.date "birth_date"
     t.text "description"
     t.bigint "disease_id", null: false
