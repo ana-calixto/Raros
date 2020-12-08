@@ -1,19 +1,14 @@
-  <div class="topics" >
-
-    <div><h1>Atividade</h1></div>
-
-      <% topics.each do |t| %>
-        <div class="card">
-          <div style="display: flex;">
-            <%= cl_image_tag t.user.photo.key, class: "avatar" %>
-            <h5 style="margin-left: 10px; "><strong> <%= t.user.first_name %></strong> </h5>
-          </div>
-          <p> <%= time_ago_in_words t.created_at %>: <strong> <%= link_to t.title, topic_path(t) %> </strong></p>
-          <p> <%= t.content.truncate(200, separator: ' ') %> </p>
-          <p> <%= link_to "Saiba mais", topic_path(t), class: 'link-topic' %> </p>
-
+<div class="topics" >
+  <div><h1>Atividade</h1></div>
+    <% topics.each do |t| %>
+      <div class="card">
+        <div style="display: flex;">
+          <%= cl_image_tag t.user.photo.key, class: "avatar" %>
+          <h5 style="margin-left: 10px; "><strong> <%= t.user.first_name %></strong> </h5>
         </div>
-      <% end %>
-  <%#= link_to "Novo tópico", new_topic_path, class: "btn btn-primary mt-2" %>
-  </div>
+        <p> <%= time_ago_in_words t.created_at %>: <strong> <%= link_to t.title, topic_path(t) %> </strong></p>
+        <p> <%= t.content.truncate(200, separator: ' ') %> </p>
+      </div>
+    <% end %>
+</div>
 
