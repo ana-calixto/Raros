@@ -4,7 +4,7 @@
 
     <h1>Topic <%= @topic.title %> </h1>
       <%= cl_image_tag @topic.user.photo.key, class: "avatar" %>
-
+      <%#= raise %>
       <p> Criado por <strong><%= @topic.user.first_name %></strong> </p>
         <p> <%= @topic.content %>
           <% if current_user.id == @topic.user_id %>

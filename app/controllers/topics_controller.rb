@@ -1,3 +1,4 @@
+require 'pry-byebug'
 class TopicsController < ApplicationController
   before_action :set_counter, only: [:show]
   before_action :set_topics, only: [:show, :edit, :update, :destroy, :add_topic_like]
@@ -46,7 +47,6 @@ class TopicsController < ApplicationController
   end
 
   def add_topic_like
-    # raise
     topic_like = @topic.topic_likes.where(user_id: current_user.id).first
     if topic_like.nil?
       @topic.like_count +=1
