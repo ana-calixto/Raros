@@ -38,7 +38,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { multipleSelect } from '../components/select2';
 import { clearform } from '../components/chatmessage';
-
+import { chatbtn } from '../components/chat';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -51,6 +51,7 @@ document.addEventListener('turbolinks:load', () => {
   multipleSelect();
   initAutocomplete();
   clearform();
+  chatbtn();
 });
 
 import "controllers"

@@ -1,0 +1,16 @@
+<div class="container">
+  <% if @chatroom.user.first_name == current_user.first_name %>
+    <h3>Chat com <%= @chatroom.author.first_name%></h3>
+  <%else%>
+    <h3>Chat com <%= @chatroom.user.first_name%></h3>
+  <%end%>
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <%= render partial: "messages/message", locals: { message: message } %>
+    <% end %>
+  </div>
+  <%= simple_form_for [ @chatroom, @message ], id:"new-msg", remote: true do |f| %>
+  <%= f.input :content, label: false, placeholder: "Type your message", id:"msg-input" %>
+    <% end %>
+
+</div>
