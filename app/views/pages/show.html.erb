@@ -12,57 +12,62 @@
 
   <div class="content">
 
-    <div class="info">
-      <h4>Sobre mim</h4>
-      <p> <%= @user.description %></p>
-      <br>
-      <p><i class="fas fa-birthday-cake"></i>  Idade: <%= @age  %></p>
-      <p><i class="far fa-gem"></i>  Raridade: <%= @user.disease.name %></p>
-        <% if @user != current_user %>
-          <p class="btn btn-success btn-block"><i class="far fa-comments"></i> <%= link_to "Diga oi!", chatrooms_path(id: @user.id), method: :post %></p>
-        <% end %>
-        <% if @user == current_user %>
-          <p class="btn btn-success btn-block"><%= link_to "Editar", edit_user_registration_path %></p>
-        <% end %>
-    </div>
+    <div class="content-block-left">
+      <div class="follow">
+
+        <p class="follow-count">Seguidores: <%= @user.followers.count %> </p>   
+        <p class="follow-count">Seguindo: <%= @user.following.count %></p>
+        
+
+        <% if user_signed_in? && current_user.id != @user.id %>
+          <% if current_user.is_following?(@user.id) %>
+            <span class="btn btn-success  btn-block"> <%= link_to "Parar de seguir", unfollow_path(@user.id), method: :post, remote: true %></span>
+          <% else %>
+            <span class="btn btn-success btn-block"><%= link_to "Seguir", follow_path(@user.id), method: :post, remote: true %></span>
+          <% end %>
+          <% end %>
+      </div>
+
+
+      <div class="info">
+        <h4>Sobre mim</h4>
+        <p> <%= @user.description %></p>
+        <br>
+        <p><i class="fas fa-birthday-cake"></i>  Idade: <%= @age  %></p>
+        <p><i class="far fa-gem"></i>  Raridade: <%= @user.disease.name %></p>
+          <% if @user != current_user %>
+            <p class="btn btn-success btn-block"><i class="far fa-comments"></i> <%= link_to "Diga oi!", chatrooms_path(id: @user.id), method: :post %></p>
+          <% end %>
+          <% if @user == current_user %>
+            <p class="btn btn-primary btn-block"><%= link_to "Editar", edit_user_registration_path %></p>
+          <% end %>
+      </div>
+    </div>  
 
     <div class="middle-col">
 
-      <div class="follow">
 
-        <span>Followers</span> <%= @user.followers.count %>
-
-        <span>Following</span> <%= @user.following.count %>
-
-      <% if user_signed_in? && current_user.id != @user.id %>
-        <% if current_user.is_following?(@user.id) %>
-          <span class="btn btn-success  btn-block"> <%= link_to "Unfollow", unfollow_path(@user.id), method: :post, remote: true %></span>
-        <% else %>
-          <span class="btn btn-success btn-block"><%= link_to "Follow", follow_path(@user.id), method: :post, remote: true %></span>
-        <% end %>
-        <% end %>
-      </div>
 
       <% if @user == current_user %>
         <div class="container-post">  
           <%= cl_image_tag @user.photo.key, class: "avatar-large pic-post" %>
           <span class= "post-create btn-block">
-          <%= link_to "Criar um post", new_topic_path, data: {toggle: "modal", target: "#topicModalCenter"} %>
+          <%= link_to "O que você quer postar hoje?", new_topic_path, data: {toggle: "modal", target: "#topicModalCenter"} %>
             <div class="modal fade" id="topicModalCenter" tabindex="-1" role="dialog">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <%= simple_form_for Topic.new, remote: true do |f| %>
                     <div class="modal-header">
-                      <%= f.input :title, label: false, placeholder: "Post Title" %>
+                      <%= f.input :title, label: false, placeholder: "Título do post" %>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
                     <div class="modal-body">
-                      <%= f.input :content %>
+                      <%= f.input :content, label: false, placeholder: "Compartilhe sentimentos e dúvidas com outros Raros." %>
                     </div>
                     <div class="modal-footer">
-                      <%= f.submit "Post", class: "btn btn-primary btn-block" %>
+                      <%= f.submit "Publicar", class: "btn btn-success btn-block" %>
                     </div>
                   <% end %>
                 </div>
@@ -78,7 +83,7 @@
             <span class="no-post"> Ops! Parece que <%= @user.first_name %> ainda não escreveu nada por aqui. </span>
           <% else %>
             <ul class="items">
-            <% @topics.last(3).each do |topic| %>
+            <% @topics.last(5).each do |topic| %>
             <li><%= cl_image_tag @user.photo.key, class: "avatar" %>
             <%= link_to topic.title, topic_path(topic) %></li>
             <% end %>
