@@ -118,16 +118,16 @@ user.photo.attach(io: File.open('app/assets/images/roberto.jpg'), filename: 'rob
 user.save!
 
 topic = Topic.create(
-  title: "Tratamento em SP"
-  content: "Gostaria de saber se alguém conhece algum tratamento pelo SUS para Doença de Addison"
-  user_id: 2
+  title: "Tratamento em SP",
+  content: "Gostaria de saber se alguém conhece algum tratamento pelo SUS para Doença de Addison",
+  user_id: 2,
 )
 topic.save!
 
 topic = Topic.create(
-  title: "Artigo"
-  content: "Achei esse artigo bem interessante: https://www.uol.com.br/vivabem/colunas/paola-machado/2020/11/18/desequilibrio-eletrolitico-saiba-o-que-e.htm"
-  user_id: 2
+  title: "Artigo",
+  content: "Achei esse artigo bem interessante: https://www.uol.com.br/vivabem/colunas/paola-machado/2020/11/18/desequilibrio-eletrolitico-saiba-o-que-e.htm",
+  user_id: 2,
 )
 topic.save!
 
