@@ -87,11 +87,10 @@
     <div class="more">
       <div class="follows">
         <div class="followings-home">
-          <%= render 'shared/followings', followings: current_user.following %>
+          <%= render 'shared/followings', followings: current_user.following.last(9) %>
         </div>
-
         <div class="followers-home">
-          <%= render 'shared/followers', followers: current_user.followers %>
+          <%= render 'shared/followers', followers: current_user.followers.last(9) %>
         </div>
       </div>
     </div>

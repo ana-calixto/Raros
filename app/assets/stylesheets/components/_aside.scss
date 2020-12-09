@@ -3,7 +3,6 @@ h5 {
 }
 
 .more {
-  /* background-color: white; */
   width: 20vw;
   display: block;
   margin-right: 20px;
@@ -24,13 +23,17 @@ h5 {
 .followings {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 0px;
+  margin-top: -50px;
   margin-bottom: 20px;
-  border-radius: 5px;
+  h6 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
 }
 
 .following-pic {
   padding: 0;
+  margin-top: 10px;
 }
 
 .following-card {
@@ -43,4 +46,6 @@ h5 {
   text-decoration: none;
 }
 
-
+.followings-home {
+  margin-top: 10px;
+}
