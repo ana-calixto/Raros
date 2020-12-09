@@ -71,23 +71,23 @@ diseases.each do |disease|
  puts "Creating users..."
 
  #Create users with standard avatar photo.
-# 30.times do
-#   user = User.create(
-#       username: Faker::Name.initials,
-#       first_name: Faker::Name.first_name,
-#       last_name: Faker::Name.last_name,
-#       email: Faker::Internet.email,
-#       password: "123456",
-#       password_confirmation: "123456",
-#       birth_date: Faker::Date.birthday(min_age: 18, max_age: 65),
-#       address: locations.sample,
-#       disease_id: rand(1..26),
-#     )
-#   # standard avatar photo for each user:
-#   user.photo.attach(io: File.open('app/assets/images/avatar.jpg'), filename: 'avatar.jpg')
-#   user.save!
+30.times do
+  user = User.create(
+      username: Faker::Name.initials,
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      email: Faker::Internet.email,
+      password: "123456",
+      password_confirmation: "123456",
+      birth_date: Faker::Date.birthday(min_age: 18, max_age: 65),
+      address: locations.sample,
+      disease_id: rand(1..26),
+    )
+  # standard avatar photo for each user:
+  user.photo.attach(io: File.open('app/assets/images/avatar.jpg'), filename: 'avatar.jpg')
+  user.save!
   
-# end
+end
 
 user = User.create(
   username: "marina",
@@ -116,5 +116,19 @@ user = User.create(
 )
 user.photo.attach(io: File.open('app/assets/images/roberto.jpg'), filename: 'roberto.jpg')
 user.save!
+
+topic = Topic.create(
+  title: "Tratamento em SP"
+  content: "Gostaria de saber se alguém conhece algum tratamento pelo SUS para Doença de Addison"
+  user_id: 2
+)
+topic.save!
+
+topic = Topic.create(
+  title: "Artigo"
+  content: "Achei esse artigo bem interessante: https://www.uol.com.br/vivabem/colunas/paola-machado/2020/11/18/desequilibrio-eletrolitico-saiba-o-que-e.htm"
+  user_id: 2
+)
+topic.save!
 
 puts "Users created!"
