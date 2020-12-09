@@ -21,9 +21,9 @@
 
         <% if user_signed_in? && current_user.id != @user.id %>
           <% if current_user.is_following?(@user.id) %>
-            <span class="btn btn-success  btn-block"> <%= link_to "Parar de seguir", unfollow_path(@user.id), method: :post, remote: true %></span>
+            <span class="btn btn-primary  btn-block"> <%= link_to "Parar de seguir", unfollow_path(@user.id), method: :post, remote: true %></span>
           <% else %>
-            <span class="btn btn-success btn-block"><%= link_to "Seguir", follow_path(@user.id), method: :post, remote: true %></span>
+            <span class="btn btn-primary btn-block"><%= link_to "Seguir", follow_path(@user.id), method: :post, remote: true %></span>
           <% end %>
           <% end %>
       </div>
@@ -36,7 +36,7 @@
         <p><i class="fas fa-birthday-cake"></i>  Idade: <%= @age  %></p>
         <p><i class="far fa-gem"></i>  Raridade: <%= @user.disease.name %></p>
           <% if @user != current_user %>
-            <p class="btn btn-success btn-block"><i class="far fa-comments"></i> <%= link_to "Diga oi!", chatrooms_path(id: @user.id), method: :post %></p>
+            <p class="btn btn-primary btn-block"><i class="far fa-comments"></i> <%= link_to "Diga oi!", chatrooms_path(id: @user.id), method: :post %></p>
           <% end %>
           <% if @user == current_user %>
             <p class="btn btn-primary btn-block"><%= link_to "Editar", edit_user_registration_path %></p>
@@ -67,7 +67,7 @@
                       <%= f.input :content, label: false, placeholder: "Compartilhe sentimentos e dúvidas com outros Raros." %>
                     </div>
                     <div class="modal-footer">
-                      <%= f.submit "Publicar", class: "btn btn-success btn-block" %>
+                      <%= f.submit "Publicar", class: "btn btn-primary btn-block" %>
                     </div>
                   <% end %>
                 </div>
