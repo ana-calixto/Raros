@@ -9,17 +9,19 @@
   margin-bottom: 2vw;
 }
 
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  background-color:white;
 }
 
 .navbar {
   background-color: white;
-  box-shadow: 0 1px 3px #853131;
+  box-shadow: 0 1px 3px #1E2D3F;
   height: 60px;
 }
 
@@ -38,11 +40,12 @@
 .logo {
   display: flex;
   align-items: center;
+  background-color: white;
 }
 
 .logo h1{
  font-family: 'Black Han Sans', sans-serif;
- color: #853131;
+ color: #1E2D3F;
  font-size: 30px;
 }
 
