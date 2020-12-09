@@ -13,25 +13,9 @@
           </div>
           <div class="mini-card">
             <div class="full-name">
-              <%= follower.first_name %>
+             <strong><%= follower.first_name %></strong>
             </div>
             <div class="followers-followings">
-              <div class="followers-count">
-                <div>
-                  Seguidores:
-                </div>
-                <div>
-                  <%= follower.followers.count %>
-                </div>
-              </div>
-              <div class="followers-count">
-                <div>
-                  Seguindo:
-                </div>
-                <div>
-                  <%= follower.following.count %>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -52,25 +36,7 @@
            </div>
            <div class="mini-card">
              <div class="full-name">
-               <%= following.first_name %>
-             </div>
-             <div class="followers-followings">
-               <div class="followers-count">
-                 <div>
-                   Seguidores:
-                 </div>
-                 <div>
-                   <%= following.followers.count %>
-                 </div>
-               </div>
-               <div class="followers-count">
-                 <div>
-                   Seguindo:
-                 </div>
-                 <div>
-                   <%= following.following.count %>
-                 </div>
-               </div>
+               <strong><%= following.first_name %></strong>
              </div>
            </div>
          </div>

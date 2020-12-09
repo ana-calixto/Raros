@@ -1,1 +1,16 @@
-<%= render "shared/chatrooms", my_chatrooms: @my_chatrooms, chatrooms: @chatrooms %>
+<div class="container">
+  <div class="chat">
+    <h4>Meus chats</h4>
+      <div class="chat-room">
+      <% @my_chatrooms.each do |chatroom| %>
+        <ul class="list-group">
+          <li class="list-group-item ">
+            <i class="fas fa-comment-dots" ></i>
+            <%= cl_image_tag chatroom.user.photo.key, class: 'avatar' %>
+            <%= link_to "Chat com #{chatroom.user.first_name}", chatroom_path(chatroom) %>
+          </li>
+        </ul>
+      <% end %>
+      </div>
+  </div>
+</div>
