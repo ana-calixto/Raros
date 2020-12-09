@@ -1,19 +1,10 @@
-<div class="chat-box">
+<div class="container">
 
 
-  <div class="container">
+  <div class="chat-box">
     <div class="row">
     <h4>Minhas mensagens</h4>
       <% my_chatrooms.each do |chatroom| %>
-        <ul class="list-group">
-          <li class="list-group-item ">
-            <i class="fas fa-comment-dots" ></i>
-            <%= link_to "Chat com #{chatroom.user.first_name}", chatroom_path(chatroom) %>
-          </li>
-        </ul>
-      <% end %>
-      <span>Mensagens Recebidas</span>
-      <% chatrooms.each do |chatroom| %>
         <ul class="list-group">
           <li class="list-group-item ">
             <i class="fas fa-comment-dots" ></i>
@@ -25,4 +16,3 @@
   </div>
 
 </div>
-<%# raise%>
