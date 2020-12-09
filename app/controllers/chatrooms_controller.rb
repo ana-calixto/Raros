@@ -6,6 +6,7 @@ class ChatroomsController < ApplicationController
 
   def index
     set_chatrooms
+    @message = Message.new
   end
 
   def create

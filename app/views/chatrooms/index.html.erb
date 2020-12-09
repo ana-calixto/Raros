@@ -1,8 +1,8 @@
 <div class="container">
   <div class="chat">
     <h4>Meus chats</h4>
+    <% @my_chatrooms.each do |chatroom| %>
       <div class="chat-room">
-      <% @my_chatrooms.each do |chatroom| %>
         <ul class="list-group">
           <li class="list-group-item ">
             <i class="fas fa-comment-dots" ></i>
@@ -10,7 +10,12 @@
             <%= link_to "Chat com #{chatroom.user.first_name}", chatroom_path(chatroom) %>
           </li>
         </ul>
+        <div class="chat-messages">
+          <%= render 'chatrooms/show', chatroom: chatroom, message: @message %>
+        </div>
+        </div>
+
       <% end %>
-      </div>
   </div>
+
 </div>
