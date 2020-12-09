@@ -3,9 +3,10 @@
   <div>
 
     <h4><%= @topic.title %> </h4>
-      <%= cl_image_tag @topic.user.photo.key, class: "avatar" %>
-      <%#= raise %>
-      <p> Criado por <strong><%= @topic.user.first_name %></strong> </p>
+      <%= link_to page_path(@topic.user_id) do%>
+        <%= cl_image_tag @topic.user.photo.key, class: "avatar" %>
+        <p> Criado por <strong><%= @topic.user.first_name %></strong> </p>
+      <%end%>
       <p> <%= @topic.content %>
         <% if current_user.id == @topic.user_id %>
           <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_topic_path(@topic) %> -
@@ -15,7 +16,7 @@
           <span class="d-none" data-target="topic.topicId"> <%= @topic.id %></span>
           <p data-target="topic.counter" style="margin-right: 5px;" > <%= @topic.like_count %> </p>
           <%= link_to "#", remote: true, data: {target: "topic.button" } do  %>
-             <i class="fas fa-thumbs-up" data-action="click->topic#refresh" ></i>
+             <i class="far fa-heart" data-action="click->topic#refresh" ></i>
           <% end %>
         </div>
       </p>

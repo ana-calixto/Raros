@@ -4,7 +4,6 @@
   <%else%>
     <h3>Chat com <%= @chatroom.user.first_name%></h3>
   <%end%>
-
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
       <%= render partial: "messages/message", locals: { message: message } %>

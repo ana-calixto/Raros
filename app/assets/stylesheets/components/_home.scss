@@ -22,6 +22,17 @@
   margin-bottom: 20px;
 }
 
+.background-image-card {
+  width: 20vw;
+  height: 8vw;
+  margin-left: -10px;
+  margin-bottom: -45px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  top: -10px;
+  z-index: -1;
+}
+
 .user-photo {
   display: flex;
   border-radius: 5px;
@@ -53,10 +64,6 @@
   flex-direction: column;
   margin-left: 22vw;
   margin-right: 6vw;
-}
-
-.chat-box {
-
 }
 
 .new-topic {
