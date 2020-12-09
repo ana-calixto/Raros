@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="container-followers">
+
+    <div class="followers">
+      <div class="title-followers">
+        <h4>Seguidores</h4>
+      </div>
+      <% @followers.each do |follower| %>
+        <%= link_to page_path(follower) do %>
+        <div class="follower-card">
+          <div class="pic">
+            <%= cl_image_tag follower.photo.key, class: 'avatar-large' %>
+          </div>
+          <div class="mini-card">
+            <div class="full-name">
+              <%= follower.first_name %>
+            </div>
+            <div class="followers-followings">
+              <div class="followers-count">
+                <div>
+                  Seguidores:
+                </div>
+                <div>
+                  <%= follower.followers.count %>
+                </div>
+              </div>
+              <div class="followers-count">
+                <div>
+                  Seguindo:
+                </div>
+                <div>
+                  <%= follower.following.count %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+
+     <div class="followers">
+      <div class="title-followers">
+        <h4>Seguindo</h4>
+      </div>
+       <% @followings.each do |following| %>
+         <%= link_to page_path(following) do %>
+         <div class="follower-card">
+           <div class="pic">
+             <%= cl_image_tag following.photo.key, class: 'avatar-large' %>
+           </div>
+           <div class="mini-card">
+             <div class="full-name">
+               <%= following.first_name %>
+             </div>
+             <div class="followers-followings">
+               <div class="followers-count">
+                 <div>
+                   Seguidores:
+                 </div>
+                 <div>
+                   <%= following.followers.count %>
+                 </div>
+               </div>
+               <div class="followers-count">
+                 <div>
+                   Seguindo:
+                 </div>
+                 <div>
+                   <%= following.following.count %>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <% end %>
+       <% end %>
+     </div>
+  </div>
+</div>
