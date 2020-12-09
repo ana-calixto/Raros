@@ -14,7 +14,8 @@ require "faker"
 #   d.save!
 # end
 
-#seed com sample de doenças raras
+#seed with rare diseases sample. Comment until line 55 if you run this seed more than once.
+
 puts "Creating Diseases"
 diseases = [
 {"nome" => "HPN", "cid_10" => "G91.8"},
@@ -54,6 +55,7 @@ diseases.each do |disease|
   end
  puts "Diseases created!"
 
+ #create locations
  locations = ["São Paulo", 
  "Boituva", 
  "Osasco", 
@@ -68,22 +70,51 @@ diseases.each do |disease|
  "São José dos Pinhais"]
  puts "Creating users..."
 
-30.times do
-  user = User.create(
-      username: Faker::Name.initials,
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      email: Faker::Internet.email,
-      password: "123456",
-      password_confirmation: "123456",
-      birth_date: Faker::Date.birthday(min_age: 18, max_age: 65),
-      address: locations.sample,
-      disease_id: rand(1..26),
-    )
-  # standard avatar photo for each user:
-  user.photo.attach(io: File.open('app/assets/images/avatar.jpg'), filename: 'avatar.jpg')
-  user.save!
+ #Create users with standard avatar photo.
+# 30.times do
+#   user = User.create(
+#       username: Faker::Name.initials,
+#       first_name: Faker::Name.first_name,
+#       last_name: Faker::Name.last_name,
+#       email: Faker::Internet.email,
+#       password: "123456",
+#       password_confirmation: "123456",
+#       birth_date: Faker::Date.birthday(min_age: 18, max_age: 65),
+#       address: locations.sample,
+#       disease_id: rand(1..26),
+#     )
+#   # standard avatar photo for each user:
+#   user.photo.attach(io: File.open('app/assets/images/avatar.jpg'), filename: 'avatar.jpg')
+#   user.save!
   
-end
+# end
+
+user = User.create(
+  username: "marina",
+  first_name: "Marina",
+  last_name: "Santos",
+  email: "marinasantos@email.com",
+  password: "123456",
+  password_confirmation: "123456",
+  birth_date: Faker::Date.birthday(min_age: 18, max_age: 22),
+  address: locations.sample,
+  disease_id: 9,
+)
+user.photo.attach(io: File.open('app/assets/images/marina.jpg'), filename: 'marina.jpg')
+user.save!
+
+user = User.create(
+  username: "roberto",
+  first_name: "Roberto",
+  last_name: "Barros",
+  email: "robertobarros@email.com",
+  password: "123456",
+  password_confirmation: "123456",
+  birth_date: Faker::Date.birthday(min_age: 28, max_age: 45),
+  address: locations.sample,
+  disease_id: 9,
+)
+user.photo.attach(io: File.open('app/assets/images/roberto.jpg'), filename: 'roberto.jpg')
+user.save!
 
 puts "Users created!"

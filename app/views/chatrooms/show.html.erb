@@ -10,9 +10,9 @@
         <%= render partial: "messages/message", locals: { message: message } %>
         <% end %>
       </div>    
-        
-        <%= simple_form_for [ @chatroom, @message ], id:"new-msg", remote: true do |f| %>
-        <%= f.input :content, label: false, placeholder: "Type your message", id:"msg-input" %>
-        <% end %>
-      
+        <div class= "chatbox">
+          <%= simple_form_for [ @chatroom, @message ], id:"new-msg", remote: true do |f| %>
+            <%= f.input :content, label: false, placeholder: "Type your message", id:"msg-input" %>
+          <% end %>
+        </div>
 </div>
