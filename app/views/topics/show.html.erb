@@ -15,7 +15,7 @@
           <span class="d-none" data-target="topic.topicId"> <%= @topic.id %></span>
           <p data-target="topic.counter" style="margin-right: 5px;" > <%= @topic.like_count %> </p>
           <%= link_to "#", remote: true, data: {target: "topic.button" } do  %>
-             <i class="fas fa-thumbs-up" data-action="click->topic#refresh" ></i>
+             <i class="far fa-heart" data-action="click->topic#refresh" ></i>
           <% end %>
         </div>
       </p>
