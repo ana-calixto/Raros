@@ -1,5 +1,7 @@
 <div class="container">
-  <h4>Quem eu sigo</h4>
+  <%= link_to followers_path do %>
+    <h4>Quem eu sigo</h4>
+  <% end  %>
   <div class="followings">
     <% followings.each do |following| %>
     <div class="following-card">

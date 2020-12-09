@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'followers/index'
   devise_for :users
 
   root to: 'pages#index'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     post ':id/unfollow', to: "profiles#unfollow", as: "unfollow"
     get ':id/show', to: "profiles#show", as: "profile"
   end
+  resources :followers, only: :index
 
   resources :chatrooms, only: [:show, :create, :index] do
     resources :messages, only: :create
