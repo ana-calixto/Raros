@@ -55,8 +55,9 @@
         </div>
       <% elsif result[:searchable_type] == 'Disease' %>
         <div class="search-disease-card">
-          <%= a.name %>
-          <%= a.cid_10 %>
+          <p><i class="fas fa-stethoscope fa-2x"></i></p>
+          <p style="font-weight:bold"><%= a.name %></p>
+          <p style="font-weight:bold"><%= a.cid_10 %></p>
         </div>
 
         <% a.users.each do |user| %>
@@ -65,8 +66,8 @@
               <div class="info-inside-search">   
                 <%= cl_image_tag user.photo.key, class: 'avatar-large' %>
                 <div class="search-all-info">
-                  <p><%= user.first_name %> <%= user.last_name %></p>
-                  <p><%= user.address%></p>
+                  <p style="font-weight:bold"><%= user.first_name %> <%= user.last_name %></p>
+                  <p ><%= user.address%></p>
                 </div>
               </div>  
             <%end%>

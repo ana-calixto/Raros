@@ -41,8 +41,8 @@ h4 {
   display: flex;
   width: 70%;
   flex-grow: 0;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
   box-shadow: 1px 1px 5px #dedede;
   border-radius: 5px;
   background-color: white;
@@ -51,6 +51,12 @@ h4 {
   // margin-right: 50px;
   padding: 10px;
   align-items: center;
+    p {
+      font-size: 17px;
+      padding-top: 7px;
+      padding-right: 5px;
+      padding-bottom: 0px;
+    }
 }
 
 .search-text {
