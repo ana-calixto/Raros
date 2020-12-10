@@ -1,7 +1,8 @@
-h4 {
-  margin-left:140px;
-  padding-top: 15px;
-}
+.search-results {
+    margin-left:140px;
+    padding-top: 15px;
+  }
+
 .search-user-card {
   display: flex;
   width: 70%;
@@ -13,7 +14,6 @@ h4 {
   background-color: white;
   margin-top: 10px;
   margin-left: 140px;
-  // margin-right: 50px;
   padding: 10px;
   align-items: center;
 }
@@ -48,7 +48,6 @@ h4 {
   background-color: white;
   margin-top: 10px;
   margin-left: 140px;
-  // margin-right: 50px;
   padding: 10px;
   align-items: center;
     p {
@@ -79,3 +78,8 @@ h4 {
   margin-top: 10px;
 }
 
+.follow-search {
+  a {
+    color: white
+  }
+}
