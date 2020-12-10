@@ -47,7 +47,7 @@
                   <span class="d-none" data-target="topic.topicId"> <%= a.id %></span>
                   <p data-target="topic.counter" style="margin-right: 5px;" > <%= a.like_count %></p>
                     <%= link_to "#", remote: true, data: {target: "topic.button" } do  %>
-                    <i class="fas fa-thumbs-up" data-action="click->topic#refresh" ></i>
+                    <i class="far fa-heart" data-action="click->topic#refresh" ></i>
                   <% end %>
                 </div>
             </div>
@@ -83,6 +83,7 @@
             </div>
           </div>
         <% end%>
+
       <% else %>
         <div class="no-results">
           <h5>Não foram encontrados dados para sua pesquisa</h5>

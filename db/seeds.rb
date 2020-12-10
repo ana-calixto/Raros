@@ -55,7 +55,7 @@ diseases.each do |disease|
   end
  puts "Diseases created!"
 
- #create locations
+ puts "Creating locations..."
  locations = ["São Paulo", 
  "Boituva", 
  "Osasco", 
@@ -68,7 +68,10 @@ diseases.each do |disease|
  "Fortaleza", 
  "Curitiba", 
  "São José dos Pinhais"]
- puts "Creating users..."
+
+ puts "Locations created!"
+
+ puts "Creating users... It should take a while, go get a coffee :-)"
 
  #Create users with standard avatar photo.
 30.times do
@@ -88,6 +91,7 @@ diseases.each do |disease|
   user.save!
   
 end
+puts "Creating one more user"
 
 user = User.create(
   username: "marina",
@@ -117,18 +121,79 @@ user = User.create(
 user.photo.attach(io: File.open('app/assets/images/roberto.jpg'), filename: 'roberto.jpg')
 user.save!
 
+user = User.create(
+  username: "camila",
+  first_name: "Camila",
+  last_name: "Santana",
+  email: "camilasantana@email.com",
+  password: "123456",
+  password_confirmation: "123456",
+  birth_date: Faker::Date.birthday(min_age: 28, max_age: 33),
+  address: locations.sample,
+  disease_id: 9,
+)
+user.photo.attach(io: File.open('app/assets/images/camila.jpg'), filename: 'camila.jpg')
+user.save!
+
+user = User.create(
+  username: "marta",
+  first_name: "Marta",
+  last_name: "Gomes",
+  email: "martagomes@email.com",
+  password: "123456",
+  password_confirmation: "123456",
+  birth_date: Faker::Date.birthday(min_age: 50, max_age: 55),
+  address: locations.sample,
+  disease_id: 9,
+)
+user.photo.attach(io: File.open('app/assets/images/marta.jpg'), filename: 'marta.jpg')
+user.save!
+
+puts "OMG, it looks like the legend Roberto Barros has signed up to R@ros!!!"
+
+puts "Last seed.... creating topics..."
+
 topic = Topic.create(
   title: "Tratamento em SP",
   content: "Gostaria de saber se alguém conhece algum tratamento pelo SUS para Doença de Addison",
-  user_id: 2,
+  user_id: 32,
 )
 topic.save!
 
 topic = Topic.create(
   title: "Artigo",
   content: "Achei esse artigo bem interessante: https://www.uol.com.br/vivabem/colunas/paola-machado/2020/11/18/desequilibrio-eletrolitico-saiba-o-que-e.htm",
-  user_id: 2,
+  user_id: 34,
 )
 topic.save!
 
-puts "Users created!"
+topic = Topic.create(
+  title: "Remédio para enjôo",
+  content: "Sou alérgica à Dramin. Alguém usa outro remédio para enjôo que faça o mesmo efeito? O Vonau funciona bem mas é muito caro :-(",
+  user_id: 33,
+)
+topic.save!
+
+topic = Topic.create(
+  title: "Médico que atenda Amil",
+  content: "Por favor, preciso de indicação de um gastro que atenda Amil no Rio de Janeiro, de preferência na Baixada",
+  user_id: 32,
+)
+topic.save!
+
+topic = Topic.create(
+  title: "Tratamento para crianças",
+  content: "Vocês tem indicação de dietas específicas para crianças?",
+  user_id: 33,
+)
+topic.save!
+
+topic = Topic.create(
+  title: "Preciso conversar",
+  content: "Queria tirar algumas dúvidas com quem já convive com a doença há bastante tempo. Estou muito perdida!",
+  user_id: 34,
+)
+topic.save!
+
+puts "Topics created!"
+puts "All seed done!"
