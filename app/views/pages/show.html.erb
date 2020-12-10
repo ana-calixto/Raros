@@ -32,9 +32,8 @@
       <div class="info">
         <h4>Sobre mim</h4>
         <p> <%= @user.description %></p>
-        <br>
-        <p><i class="fas fa-birthday-cake"></i>  Idade: <%= @age  %></p>
-        <p><i class="far fa-gem"></i>  Raridade: <%= @user.disease.name %></p>
+        <p><i class="fas fa-birthday-cake" style="font-size: 19px"></i>  Idade: <%= @age  %> anos</p>
+        <p><%= image_tag 'clover_transparent.png', width: '20px'%> Raridade: <%= @user.disease.name %></p>
           <% if @user != current_user %>
             <p class="btn btn-primary btn-block"><i class="far fa-comments"></i> <%= link_to "Diga oi!", chatrooms_path(id: @user.id), method: :post %></p>
           <% end %>
@@ -52,7 +51,7 @@
         <div class="container-post">
           <%= cl_image_tag @user.photo.key, class: "avatar-large pic-post" %>
           <span class= "post-create btn-block">
-          <%= link_to "O que você quer postar hoje?", new_topic_path, data: {toggle: "modal", target: "#topicModalCenter"} %>
+          <%= link_to "O que você gostaria de dizer hoje?", new_topic_path, data: {toggle: "modal", target: "#topicModalCenter"} %>
             <div class="modal fade" id="topicModalCenter" tabindex="-1" role="dialog">
               <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -84,8 +83,8 @@
           <% else %>
             <ul class="items">
             <% @topics.last(5).each do |topic| %>
-              <li>
-                <%= cl_image_tag @user.photo.key, class: "avatar" %>
+              <li style="margin-top:20px">
+                <% cl_image_tag @user.photo.key, class: "avatar" %>
                 <%= link_to topic.title, topic_path(topic) %>
               </li>
             <% end %>

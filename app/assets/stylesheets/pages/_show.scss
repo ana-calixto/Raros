@@ -2,6 +2,9 @@ h1 {
   font-weight: bolder;
 
 }
+h4 {
+  margin-left: 0px;
+}
 
 .header {
   box-shadow: 1px 1px 2px #d3d1d1;
@@ -62,10 +65,14 @@ flex-direction: column;
 padding: 20px;
 margin-top: 0;
 }
+.li {
+
+  padding-bottom: 10px;
+  
+}
 ul.items {
   list-style-type: none;
-  padding: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
 }
 .posts {
   box-shadow: 1px 1px 2px #d3d1d1;
