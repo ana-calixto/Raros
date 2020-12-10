@@ -84,8 +84,10 @@
           <% else %>
             <ul class="items">
             <% @topics.last(5).each do |topic| %>
-            <li><%= cl_image_tag @user.photo.key, class: "avatar" %>
-            <%= link_to topic.title, topic_path(topic) %></li>
+              <li>
+                <%= cl_image_tag @user.photo.key, class: "avatar" %>
+                <%= link_to topic.title, topic_path(topic) %>
+              </li>
             <% end %>
             </ul>
           <%end%>
