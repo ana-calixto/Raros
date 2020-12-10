@@ -3,7 +3,6 @@ class TopicsController < ApplicationController
   before_action :set_topics, only: [:show, :edit, :update, :destroy, :add_topic_like]
   skip_before_action :verify_authenticity_token, :only => [:add_topic_like]
 
-
   def index
   end
 

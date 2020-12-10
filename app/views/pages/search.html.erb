@@ -1,21 +1,21 @@
 <div class="container">
-  
+
   <h4>Resultados da busca:</h4>
-  
+
   <% @results.each do |result| %>
     <% a = result.searchable %>
       <% if result[:searchable_type] == 'User' %>
         <%= link_to page_path(a) do %>
           <div class="search-user-card">
-            <div class="info-inside-search">   
+            <div class="info-inside-search">
               <%= cl_image_tag a.photo.key, class: 'avatar-large' %>
-              
+
               <div class="search-all-info">
                 <p style="font-weight:bold"><%= a.first_name %> <%= a.last_name %></p>
                 <p><%= a.address %></p>
                 <p><%= a.disease.name %></p>
               </div>
-            </div> 
+            </div>
 
             <div class="follow-search">
               <% if user_signed_in? && current_user.id != a.id %>
@@ -63,13 +63,13 @@
         <% a.users.each do |user| %>
           <div class="search-user-card">
             <%= link_to page_path(user) do %>
-              <div class="info-inside-search">   
+              <div class="info-inside-search">
                 <%= cl_image_tag user.photo.key, class: 'avatar-large' %>
                 <div class="search-all-info">
                   <p style="font-weight:bold"><%= user.first_name %> <%= user.last_name %></p>
                   <p ><%= user.address%></p>
                 </div>
-              </div>  
+              </div>
             <%end%>
 
             <div class="follow-search">
@@ -81,26 +81,13 @@
                 <% end %>
               <% end %>
             </div>
-
-
-            
           </div>
         <% end%>
-
-
-
-
-
-
-
-
-
-        
       <% else %>
         <div class="no-results">
           <h5>Não foram encontrados dados para sua pesquisa</h5>
         </div>
       <% end %>
   <% end %>
-  
+
 </div>
