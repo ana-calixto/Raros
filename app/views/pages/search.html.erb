@@ -1,10 +1,9 @@
 <div class="container">
 
-  <h4>Resultados da busca:</h4>
-
   <% @results.each do |result| %>
     <% a = result.searchable %>
       <% if result[:searchable_type] == 'User' %>
+      <h6 class="search-results">Resultado por Raros:</h6>
         <%= link_to page_path(a) do %>
           <div class="search-user-card">
             <div class="info-inside-search">
@@ -20,9 +19,9 @@
             <div class="follow-search">
               <% if user_signed_in? && current_user.id != a.id %>
                 <% if current_user.is_following?(a.id) %>
-                  <button type="button" class="btn btn-success"><%= link_to "Deixar de seguir", unfollow_path(a.id), method: :post, remote: true %></button>
+                  <button type="button" class="btn btn-primary"><%= link_to "Deixar de seguir", unfollow_path(a.id), method: :post, remote: true %></button>
                 <% else %>
-                  <button type="button" class="btn btn-success"><%= link_to "Seguir", follow_path(a.id), method: :post, remote: true  %></button>
+                  <button type="button" class="btn btn-primary"><%= link_to "Seguir", follow_path(a.id), method: :post, remote: true  %></button>
                 <% end %>
               <% end %>
             </div>
@@ -30,6 +29,7 @@
           </div>
         <% end %>
       <% elsif result[:searchable_type] == 'Topic'%>
+      <h6 class="search-results">Resultado por tópicos:</h6>
         <div class="search-post">
           <div class="search-post-title">
             <strong><%= a.title %></strong>
@@ -54,13 +54,15 @@
           </div>
         </div>
       <% elsif result[:searchable_type] == 'Disease' %>
+      <h6 class="search-results">Resultado por raridades:</h6>
         <div class="search-disease-card">
           <p><i class="fas fa-stethoscope fa-2x"></i></p>
           <p style="font-weight:bold"><%= a.name %></p>
           <p style="font-weight:bold"><%= a.cid_10 %></p>
         </div>
-
+        <h6 class="search-results">Raros por raridades:</h6>
         <% a.users.each do |user| %>
+
           <div class="search-user-card">
             <%= link_to page_path(user) do %>
               <div class="info-inside-search">
@@ -73,11 +75,11 @@
             <%end%>
 
             <div class="follow-search">
-              <% if user_signed_in? && current_user.id != a.id %>
-                <% if current_user.is_following?(a.id) %>
-                  <button type="button" class="btn btn-success"><%= link_to "Deixar de seguir", unfollow_path(a.id), method: :post, remote: true %></button>
+              <% if user_signed_in? && current_user.id != user.id %>
+                <% if current_user.is_following?(user.id) %>
+                  <button type="button" class="btn btn-primary btn-block"><%= link_to "Deixar de seguir", unfollow_path(user.id), method: :post, remote: true %></button>
                 <% else %>
-                  <button type="button" class="btn btn-success"><%= link_to "Seguir", follow_path(a.id), method: :post, remote: true  %></button>
+                  <button type="button" class="btn btn-primary btn-block"><%= link_to "Seguir", follow_path(user.id), method: :post, remote: true  %></button>
                 <% end %>
               <% end %>
             </div>
