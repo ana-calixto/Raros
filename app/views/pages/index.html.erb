@@ -10,7 +10,7 @@
         <div class="user-photo" >
         <% if current_user%>
           <%= link_to page_path(current_user) do %>
-            <%= image_tag current_user.photo, width: '100%', height: "250px", class: 'avatar-xlarge' %>
+            <%= cl_image_tag current_user.photo, width: '100%', height: "250px", class: 'avatar-xlarge' %>
           <% end %>
         <% end %>
         </div>
@@ -19,7 +19,7 @@
           <p><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
         </div>
 
-        
+
 
         <div class="idade">
           <span class="info-user-line-age" ><i class="fas fa-birthday-cake"  style="font-size: 18px"></i></span>
@@ -29,8 +29,8 @@
           <span class="info-user-line-disease"><%= image_tag 'clover_transparent.png', width: '20px'%>
           <%= current_user.disease.name.capitalize %>
         </div>
-        
-      </div>  
+
+      </div>
     </div>
 
     <div class="feed-news">
@@ -38,7 +38,7 @@
         <div class="home-icone">
           <%= link_to followers_path do %>
             <i class="fas fa-user-friends" style="font-size: 28px"></i>
-            
+
             <%#= image_tag 'home_transparent.png', width: '29px' %>
           <% end  %>
         </div>
@@ -74,7 +74,7 @@
             <%#= image_tag 'chat.png', width: '25px' %>
           <% end  %>
         </div>
-        
+
         <i class="far fa-map" style="font-size: 27px" data-toggle="modal" data-target=".bd-example-modal-lg"></i>
          <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
            <div class="modal-dialog modal-lg">
