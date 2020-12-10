@@ -7,7 +7,8 @@
           <%= cl_image_tag t.user.photo.key, class: "avatar" %>
           <h5 style="margin-left: 10px; "><strong> <%= t.user.first_name %></strong> </h5>
         </div>
-        <p> <%= time_ago_in_words t.created_at %>: <strong> <%= link_to t.title, topic_path(t) %> </strong></p>
+        <p style="font-size: 11px"> <%= time_ago_in_words t.created_at %> </p>
+        <h6> <%= link_to t.title, topic_path(t) %> </h6>
         <p> <%= t.content.truncate(200, separator: ' ') %> </p>
       <% end %>
       </div>
