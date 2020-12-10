@@ -102,7 +102,7 @@ user = User.create(
   password_confirmation: "123456",
   birth_date: Faker::Date.birthday(min_age: 18, max_age: 22),
   address: locations.sample,
-  disease_id: 9,
+  disease_id: 3,
 )
 user.photo.attach(io: File.open('app/assets/images/marina.jpg'), filename: 'marina.jpg')
 user.save!
@@ -116,7 +116,7 @@ user = User.create(
   password_confirmation: "123456",
   birth_date: Faker::Date.birthday(min_age: 28, max_age: 45),
   address: locations.sample,
-  disease_id: 9,
+  disease_id: 3,
 )
 user.photo.attach(io: File.open('app/assets/images/roberto.jpg'), filename: 'roberto.jpg')
 user.save!
@@ -130,10 +130,12 @@ user = User.create(
   password_confirmation: "123456",
   birth_date: Faker::Date.birthday(min_age: 28, max_age: 33),
   address: locations.sample,
-  disease_id: 9,
+  disease_id: 3,
 )
 user.photo.attach(io: File.open('app/assets/images/camila.jpg'), filename: 'camila.jpg')
 user.save!
+
+puts "OMG, it looks like the legend Roberto Barros has signed up to R@ros!!!"
 
 user = User.create(
   username: "marta",
@@ -144,26 +146,52 @@ user = User.create(
   password_confirmation: "123456",
   birth_date: Faker::Date.birthday(min_age: 50, max_age: 55),
   address: locations.sample,
-  disease_id: 9,
+  disease_id: 3,
 )
 user.photo.attach(io: File.open('app/assets/images/marta.jpg'), filename: 'marta.jpg')
 user.save!
 
-puts "OMG, it looks like the legend Roberto Barros has signed up to R@ros!!!"
+user = User.create(
+  username: "fernanda",
+  first_name: "Fernanda",
+  last_name: "Albuquerque",
+  email: "fernandaalbuquerque@email.com",
+  password: "123456",
+  password_confirmation: "123456",
+  birth_date: Faker::Date.birthday(min_age: 28, max_age: 25),
+  address: locations.sample,
+  disease_id: 3,
+)
+user.photo.attach(io: File.open('app/assets/images/fernanda.jpg'), filename: 'fernanda.jpg')
+user.save!
 
 puts "Last seed.... creating topics..."
 
+user = User.create(
+  username: "bruno",
+  first_name: "Bruno",
+  last_name: "Moreira",
+  email: "brunomoreira@email.com",
+  password: "123456",
+  password_confirmation: "123456",
+  birth_date: Faker::Date.birthday(min_age: 38, max_age: 40),
+  address: locations.sample,
+  disease_id: 3,
+)
+user.photo.attach(io: File.open('app/assets/images/bruno.jpg'), filename: 'bruno.jpg')
+user.save!
+
 topic = Topic.create(
   title: "Tratamento em SP",
-  content: "Gostaria de saber se alguém conhece algum tratamento pelo SUS para Doença de Addison",
-  user_id: 32,
+  content: "Gostaria de saber se alguém conhece algum tratamento pelo SUS para HII. Me falaram do ambulatório de pseudotumor do HC, mas não tem vagas até ago/2021",
+  user_id: 31,
 )
 topic.save!
 
 topic = Topic.create(
   title: "Artigo",
   content: "Achei esse artigo bem interessante: https://www.uol.com.br/vivabem/colunas/paola-machado/2020/11/18/desequilibrio-eletrolitico-saiba-o-que-e.htm",
-  user_id: 34,
+  user_id: 3,
 )
 topic.save!
 
@@ -176,14 +204,14 @@ topic.save!
 
 topic = Topic.create(
   title: "Médico que atenda Amil",
-  content: "Por favor, preciso de indicação de um gastro que atenda Amil no Rio de Janeiro, de preferência na Baixada",
-  user_id: 32,
+  content: "Por favor, preciso de indicação de um neuro que atenda Amil no Rio de Janeiro, de preferência na Baixada",
+  user_id: 35,
 )
 topic.save!
 
 topic = Topic.create(
-  title: "Tratamento para crianças",
-  content: "Vocês tem indicação de dietas específicas para crianças?",
+  title: "Punção lombar pelo SUS",
+  content: "Estou tentando agendar punção pelo SUS e não consigo. Preciso do contato do Dr Sandro da UNIFESP. Sabem se ele voltou a atender?",
   user_id: 33,
 )
 topic.save!
