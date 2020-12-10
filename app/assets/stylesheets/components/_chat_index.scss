@@ -19,8 +19,9 @@
   display: block;
   justify-content: center;
   opacity: .8;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 200px;
+
 }
 
 .chat-area {
@@ -28,7 +29,6 @@
 }
 
 .chat-messages {
-  background-color: white;
   margin-left: 50px;
   padding: 20px;
   width: 40vw;
@@ -44,4 +44,10 @@
 
 .chatroom-js {
   width: 100%;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
 }
