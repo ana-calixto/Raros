@@ -19,7 +19,20 @@ h5 {
   position: fixed;
   right: 7rem;
   top: calc(60px + 2vw);
+
 }
+
+#title1-right-box {
+  margin-left: auto;
+  margin-top: -4rem;
+}
+
+#title2-right-box {
+margin-left: auto;
+border-top: 1px solid #696969;
+margin-top: -2rem;
+}
+
 
 .followings {
   display: grid;
