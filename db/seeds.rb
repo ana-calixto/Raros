@@ -163,7 +163,7 @@ topic.save!
 topic = Topic.create(
   title: "Artigo",
   content: "Achei esse artigo bem interessante: https://www.uol.com.br/vivabem/colunas/paola-machado/2020/11/18/desequilibrio-eletrolitico-saiba-o-que-e.htm",
-  user_id: 33,
+  user_id: 34,
 )
 topic.save!
 
@@ -177,14 +177,14 @@ topic.save!
 topic = Topic.create(
   title: "Médico que atenda Amil",
   content: "Por favor, preciso de indicação de um gastro que atenda Amil no Rio de Janeiro, de preferência na Baixada",
-  user_id: 34,
+  user_id: 32,
 )
 topic.save!
 
 topic = Topic.create(
-  title: "Médico que atenda Amil",
-  content: "Por favor, preciso de indicação de um gastro que atenda Amil no Rio de Janeiro, de preferência na Baixada",
-  user_id: 34,
+  title: "Tratamento para crianças",
+  content: "Vocês tem indicação de dietas específicas para crianças?",
+  user_id: 33,
 )
 topic.save!
 
