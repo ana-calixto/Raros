@@ -3,7 +3,7 @@
 
     <div class="followers">
       <div class="title-followers">
-        <h4>Seguidores</h4>
+        <h6>Seguidores</h6>
       </div>
       <% @followers.each do |follower| %>
         <%= link_to page_path(follower) do %>
@@ -26,7 +26,7 @@
 
      <div class="followers">
       <div class="title-followers">
-        <h4>Seguindo</h4>
+        <h6>Seguindo</h6>
       </div>
        <% @followings.each do |following| %>
          <%= link_to page_path(following) do %>

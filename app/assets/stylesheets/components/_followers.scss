@@ -11,9 +11,6 @@
   width: 50%;
   margin-left: 40px;
   padding: 10px;
-  box-shadow: 1px 1px 3px black;
-  background-image: url('back_image.jpg');
-  background-size: cover;
 }
 
 .mini-card {
@@ -25,11 +22,11 @@
 .follower-card {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 1px 1px 3px black;
+  box-shadow: 1px 1px 2px #d3d1d1;
   padding: 10px;
 }
 
