@@ -23,4 +23,27 @@
       </div>
     </div>
   <% end %>
+  <% @chatrooms.each do |chatroom| %>
+    <div class="container-chat">
+      <div class="chat">
+        <div class="d-flex w-500" id="chatroom-js">
+          <div class="chat-area">
+            <div class="chat-room">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <i class="fas fa-comment-dots" ></i>
+                  <%= cl_image_tag chatroom.author.photo.key, class: 'avatar' %>
+                  <button type="button" class="btn btn-primary" id="chat-button" value="<%= chatroom.id %>">Chat</button>
+                  <%#= link_to "Chat com #{chatroom.user.first_name}", chatroom_path(chatroom) %>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="chat-messages" id="chat-<%= chatroom.id %>" style="display: none;">
+            <%= render 'chatrooms/show', chatroom: chatroom, message: @message %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
