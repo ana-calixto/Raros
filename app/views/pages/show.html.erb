@@ -83,8 +83,8 @@
           <% else %>
             <ul class="items">
             <% @topics.last(5).each do |topic| %>
-              <li style="margin-top:20px">
-                <% cl_image_tag @user.photo.key, class: "avatar" %>
+              <li style="margin-top: 20px" >
+                <%= cl_image_tag @user.photo.key, class: "avatar" %>
                 <%= link_to topic.title, topic_path(topic) %>
               </li>
             <% end %>
