@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <head>
+  <title>Página não encontrada(404), mas o socorro já chegou</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
   <style>
     body {
-      background-image: url("images/erro404_j.jpg");
+      background-image: url("images/erro_404.png");
       background-size: cover;
-      width: 100%;
-      height: 50%;
-      /* background-color: green; */
+      background-repeat: no-repeat;
     }
 
   /*.rails-default-error-page {
@@ -59,11 +58,22 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }*/
+
+  .error-msg {
+    font-size: 40px;
+    color: gray;
+    opacity: 0%;
+  }
+
+  p {
+    margin-top: 688px;
+    margin-left: 620px;
+  }
   </style>
 </head>
 
 <body class="rails-default-error-page">
-  <a href="www.rarosapp.com"></a>
+  <p><a href="www.rarosapp.com" class="error-msg">voltar</a></p>
   <!-- This file lives in public/404.html -->
 </body>
 </html>
