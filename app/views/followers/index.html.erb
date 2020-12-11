@@ -1,10 +1,9 @@
-<div class="container">
+<div class="container" style="display: flex; justify-content: space-around;">
   <div class="container-followers">
-
+    <div class="title-followers">
+      <h6>Seguidores</h6>
+    </div>
     <div class="followers">
-      <div class="title-followers">
-        <h6>Seguidores</h6>
-      </div>
       <% @followers.each do |follower| %>
         <%= link_to page_path(follower) do %>
         <div class="follower-card">
@@ -22,26 +21,27 @@
         <% end %>
       <% end %>
     </div>
+  </div>
 
-
-     <div class="followers">
-      <div class="title-followers">
-        <h6>Seguindo</h6>
-      </div>
-       <% @followings.each do |following| %>
-         <%= link_to page_path(following) do %>
-         <div class="follower-card">
-           <div class="pic">
-             <%= cl_image_tag following.photo.key, class: 'avatar-large' %>
-           </div>
-           <div class="mini-card">
-             <div class="full-name">
-               <strong><%= following.first_name %></strong>
-             </div>
-           </div>
-         </div>
-         <% end %>
-       <% end %>
-     </div>
+  <div class="container-followers">
+    <div class="title-followers">
+      <h6>Seguindo</h6>
+    </div>
+    <div class="followers">
+        <% @followings.each do |following| %>
+          <%= link_to page_path(following) do %>
+          <div class="follower-card">
+            <div class="pic">
+              <%= cl_image_tag following.photo.key, class: 'avatar-large' %>
+            </div>
+            <div class="mini-card">
+              <div class="full-name">
+                <strong><%= following.first_name %></strong>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+    </div>
   </div>
 </div>
