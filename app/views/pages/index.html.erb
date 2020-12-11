@@ -8,28 +8,31 @@
 
       <div class="info-card-home">
         <div class="user-photo" >
-        <% if current_user%>
-          <%= link_to page_path(current_user) do %>
-            <%= cl_image_tag current_user.photo.key, width: '100%', height: "250px", class: 'avatar-xlarge' %>
+          <% if current_user%>
+            <%= link_to page_path(current_user) do %>
+              <%= cl_image_tag current_user.photo.key, width: '100%', height: "250px", class: 'avatar-xlarge' %>
+            <% end %>
           <% end %>
-        <% end %>
         </div>
 
         <div class="user-name">
-          <p><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
+          <p>
+            <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>
+          </p>
         </div>
-
-
 
         <div class="idade">
-          <span class="info-user-line-age" ><i class="fas fa-birthday-cake"  style="font-size: 18px"></i></span>
+          <span class="info-user-line-age" >
+            <i class="fas fa-birthday-cake"  style="font-size: 18px"></i>
+          </span>
           <%= @age if current_user %> anos
         </div>
+
         <div class="disease-name">
-          <span class="info-user-line-disease"><%= image_tag 'clover_transparent.png', width: '20px'%>
+          <span class="info-user-line-disease"></span>
+            <%= image_tag 'clover_transparent.png', width: '20px'%>
           <%= current_user.disease.name.capitalize %>
         </div>
-
       </div>
     </div>
 
@@ -96,11 +99,10 @@
     <div class="more">
       <div class="follows">
         <div class="followings-home">
-          <%= render 'shared/followings', followings: current_user.following %>
+          <%= render 'shared/followings', followings: current_user.following.last(9) %>
         </div>
-
         <div class="followers-home">
-          <%= render 'shared/followers', followers: current_user.followers %>
+          <%= render 'shared/followers', followers: current_user.followers.last(9) %>
         </div>
       </div>
     </div>

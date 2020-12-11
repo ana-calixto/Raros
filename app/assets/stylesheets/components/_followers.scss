@@ -1,15 +1,12 @@
 .container-followers {
-  margin-top: 80px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .followers {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
-  width: 50%;
-  margin-left: 40px;
   padding: 10px;
 }
 
@@ -38,12 +35,6 @@
   padding: 2px;
 }
 
-.followers-count {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .full-name {
   align-self: center;
   flex-wrap: nowrap;
@@ -56,4 +47,33 @@
 
 .following-pic {
   margin-top: 10px;
+}
+
+#followers-title {
+  padding: 10px;
+  margin-top: -80px;
+}
+
+.followings-home {
+  background-color: white;
+  padding: 10px;
+  box-shadow: 1px 1px 2px #d3d1d1;
+  border-radius: 5px;
+}
+
+.followers-home {
+  background-color: white;
+  padding: 10px;
+  box-shadow: 1px 1px 2px #d3d1d1;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.followers-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  width: 50%;
+  margin-left: 40px;
+  padding: 10px;
 }
